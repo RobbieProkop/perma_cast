@@ -1,15 +1,23 @@
 ---
-import "../styles/hero.astro";
+import "../styles/hero.scss";
 
 export interface Props {
   title?: string;
 }
 
-const title = Astro.props as Props;
+const { title = "Perma-Cast" } = Astro.props as Props;
 ---
 
 <section class="hero">
   <div class="container">
     <h1>{title}</h1>
+    <p class="hero-text">
+      For over 25 years, clients have selected Perma-Cast to complete their
+      challenging projects on time, under budget, and with superior quality
+      performance. As a member of the Calgary Construction Association (CAA) and
+      with a Certificate of Recognition (COR), Perma-Cast continues to raise the
+      bar in all disciplines, including commercial and industrial concrete
+      foundations, multi-level parkades, high-rises, and water reservoirs.
+    </p>
   </div>
 </section>
