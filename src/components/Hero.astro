@@ -3,12 +3,29 @@ import "../styles/hero.scss";
 
 export interface Props {
   title?: string;
+  image?: string;
 }
 
-const { title = "Perma-Cast" } = Astro.props as Props;
+const { title = "Perma-Cast", image } = Astro.props as Props;
 ---
 
 <section class="hero">
+  {
+    image && (
+      <div class="header-bg">
+        <picture>
+          <img
+            src={image}
+            alt="header background image"
+            loading="eager"
+            role="presentation"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
+      </div>
+    )
+  }
   <div class="container">
     <h1>{title}</h1>
     <p class="hero-text">
