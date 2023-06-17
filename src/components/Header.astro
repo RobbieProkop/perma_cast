@@ -1,13 +1,21 @@
 ---
 import "../styles/header.scss";
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+const logo = "/assets/logo.png";
 ---
 
-<header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
+<header class="header">
+	<div>
+		<a href="/"
+			><img
+				src={logo}
+				alt="A.P initials logo"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
+			/></a
+		>
+	</div>
 	<nav>
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/about">About Us</HeaderLink>
