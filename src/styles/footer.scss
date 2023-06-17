@@ -1,4 +1,6 @@
 .footer {
+  display: grid;
+  grid-column: 1 / span 2;
   padding: 25px;
   text-align: center;
 }
