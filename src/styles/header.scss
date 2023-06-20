@@ -1,10 +1,33 @@
 .header {
   position: sticky;
   top: 0;
-
   display: flex;
-
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 1rem;
+
+  .logo {
+    max-width: 206px;
+    max-height: 200px;
+  }
+
+  .nav .socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+
+    .icon {
+      margin: 0 5px;
+
+      &.insta {
+        margin-right: 0;
+      }
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
 }

@@ -1,22 +1,26 @@
 ---
 import "../styles/header.scss";
 import HeaderLink from "./HeaderLink.astro";
+
 const logo = "/assets/logo.png";
+const insta = "/assets/icons/insta.png";
+const fb = "/assets/icons/fb.png";
+const linkedin = "/assets/icons/linkedin.png";
 ---
 
 <header class="header">
-	<div>
+	<div class="logo">
 		<a href="/"
 			><img
 				src={logo}
-				alt="A.P initials logo"
+				alt="Perma Cast logo"
 				loading="eager"
 				fetchpriority="high"
 				decoding="async"
 			/></a
 		>
 	</div>
-	<nav>
+	<nav class="nav">
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/about">About Us</HeaderLink>
 		<HeaderLink href="/services">Services</HeaderLink>
@@ -25,4 +29,42 @@ const logo = "/assets/logo.png";
 		<HeaderLink href="/careers">Careers</HeaderLink>
 		<HeaderLink href="/contact">Contact Us</HeaderLink>
 	</nav>
+
+	<div class="socials">
+		<a
+			href="https://www.instagram.com/perma_cast_concrete/"
+			target="_blank"
+			class="icon insta"
+			><img
+				src={insta}
+				alt="instagram logo"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
+			/></a
+		>
+		<a
+			href="https://www.facebook.com/people/Perma-Cast/100070288428307/"
+			class="icon"
+			target="_blank"
+			><img
+				src={fb}
+				alt="facebook logo"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
+			/></a
+		><a
+			href="https://www.linkedin.com/company/perma-cast-concrete-contracting-ltd/"
+			class="icon"
+			target="_blank"
+			><img
+				src={linkedin}
+				alt="linkedin logo"
+				loading="eager"
+				fetchpriority="high"
+				decoding="async"
+			/></a
+		>
+	</div>
 </header>
