@@ -67,4 +67,29 @@ const linkedin = "/assets/icons/linkedin.png";
 			/></a
 		>
 	</div>
+
+	<label for="hamberger-menu" class="hidden"></label>
+	<input id="open-menu" class="toggler" type="checkbox" />
+	<div id="hamberger" class="hamberger"><div></div></div>
+
+	<div id="mobile-menu" class="menu">
+		<nav>
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/about">About Us</HeaderLink>
+			<HeaderLink href="/services">Services</HeaderLink>
+			<HeaderLink href="/projects">Projects</HeaderLink>
+			<HeaderLink href="/safety">Safety</HeaderLink>
+			<HeaderLink href="/careers">Careers</HeaderLink>
+			<HeaderLink href="/contact">Contact Us</HeaderLink>
+		</nav>
+	</div>
 </header>
+
+<script>
+	const open = document.getElementById("open-menu") as HTMLInputElement;
+	const hamberger = document.getElementById("hamberger") as HTMLElement;
+
+	hamberger.addEventListener("click", () => {
+		open.checked = !open.checked;
+	});
+</script>
