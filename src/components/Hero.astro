@@ -4,12 +4,14 @@ import "../styles/hero.scss";
 export interface Props {
   title?: string;
   image?: string;
+  overlay?: boolean;
 }
 
-const { title = "Perma-Cast", image } = Astro.props as Props;
+const { title = "Perma-Cast", image, overlay } = Astro.props as Props;
 ---
 
 <section class="hero">
+  {overlay && <div class="overlay" />}
   {
     image && (
       <div class="header-bg">

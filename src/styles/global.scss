@@ -48,6 +48,11 @@ img {
   height: auto;
 }
 
+.container {
+  padding: 1rem;
+  max-width: 1400px;
+}
+
 @media screen and (max-width: 950px) {
   body {
     display: inline;
