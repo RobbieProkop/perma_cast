@@ -13,7 +13,7 @@ body {
   font-family: $primary-font;
   background-color: #fff;
   line-height: 1.5;
-  color: #444;
+  color: #222;
 }
 h1,
 h2,
@@ -26,13 +26,19 @@ b {
   color: #222;
   font-weight: 600;
 }
+
+h1 {
+  font-size: 2rem;
+}
 a {
   text-decoration: none;
-  color: #444;
+  color: #000;
 }
 
 p {
   font-family: $secondary-font;
+  font-weight: 500;
+  // font-size: 20px;
 }
 
 textarea {
@@ -49,7 +55,7 @@ img {
 }
 
 .container {
-  padding: 1rem;
+  padding: 2rem;
   max-width: 1400px;
 }
 

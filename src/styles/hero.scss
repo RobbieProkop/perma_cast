@@ -30,6 +30,9 @@
   }
 
   .container {
+    @include flex-center();
+    align-items: flex-start;
+    flex-direction: column;
     height: 100%;
     z-index: 1;
   }
