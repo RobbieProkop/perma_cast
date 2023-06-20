@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Anaheim&family=Montserrat:wght@300;400;500;600&display=swap");
+
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+$primary: #677698;
+$primary-font: "Montserrat", Arial, Helvetica, sans-serif;
+$secondary-font: "Anaheim", Arial, Helvetica, sans-serif;

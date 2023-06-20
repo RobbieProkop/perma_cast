@@ -1,3 +1,5 @@
+@import "variables";
+
 *,
 *::before,
 *::after {
@@ -9,7 +11,7 @@
 body {
   display: grid;
   grid-template-columns: 300px 1fr;
-  font-family: Verdana, sans-serif;
+  font-family: $primary-font;
   background-color: #fff;
   line-height: 1.5;
   color: #444;
@@ -27,10 +29,15 @@ h6,
 strong,
 b {
   color: #222;
+  font-weight: 600;
 }
 a {
   text-decoration: none;
   color: #444;
+}
+
+p {
+  font-family: $secondary-font;
 }
 
 textarea {
