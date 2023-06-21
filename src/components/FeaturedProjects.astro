@@ -1,0 +1,62 @@
+---
+import "../styles/featuredProjects.scss";
+
+import * as featured1 from "../content/projects/1.md";
+import * as featured2 from "../content/projects/2.md";
+import * as featured3 from "../content/projects/3.md";
+
+const featuredArr = [featured1, featured2, featured3];
+---
+
+<section class="featured">
+  <div class="container">
+    <div class="heading">
+      <h2>FEATURED PROJECTS</h2>
+      <div class="line"></div>
+    </div>
+
+    <div class="flex">
+      {featuredArr.map(featured => {
+        const {title, image, client, location} = featured.frontmatter
+        return (
+        <div class="item">
+          <h3>{title}</h3>
+          <img
+            src={image}
+            alt=`${title} project`
+            loading="lazy"
+          />
+          <div class="text">
+            <p>{client}</p>
+            <p>{location}</p>
+          </div>
+        </div>)
+
+      })}
+      <!-- <div class="item">
+        <h3>{featured2.title}</h3>
+        <img
+          src={featured2.image}
+          alt="first featured project"
+          loading="lazy"
+        />
+        <div class="text">
+          <p>{featured2.client}</p>
+          <p>{featured2.location}</p>
+        </div>
+      </div>
+      <div class="item">
+        <h3>{featured3.title}</h3>
+        <img
+          src={featured3.image}
+          alt="first featured project"
+          loading="lazy"
+        />
+        <div class="text">
+          <p>{featured3.client}</p>
+          <p>{featured3.location}</p>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>

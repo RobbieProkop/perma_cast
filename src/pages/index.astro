@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
 ---
 
 <!DOCTYPE html>
@@ -20,6 +21,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				overlay={true}
 				button={true}
 			/>
+
+			<FeaturedProjects />
 		</main>
 		<Footer />
 	</body>
