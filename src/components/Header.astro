@@ -20,7 +20,12 @@ const linkedin = "/assets/icons/linkedin.png";
 			/></a
 		>
 	</div>
-	<nav class="nav">
+
+	<label for="hamberger-menu" class="hidden"></label>
+	<input id="open-menu" class="toggler" type="checkbox" />
+	<div id="hamberger" class="hamberger"><div></div></div>
+
+	<nav class="menu">
 		<HeaderLink href="/">Home</HeaderLink>
 		<HeaderLink href="/about">About Us</HeaderLink>
 		<HeaderLink href="/services">Services</HeaderLink>
@@ -29,22 +34,6 @@ const linkedin = "/assets/icons/linkedin.png";
 		<HeaderLink href="/careers">Careers</HeaderLink>
 		<HeaderLink href="/contact">Contact</HeaderLink>
 	</nav>
-
-	<label for="hamberger-menu" class="hidden"></label>
-	<input id="open-menu" class="toggler" type="checkbox" />
-	<div id="hamberger" class="hamberger"><div></div></div>
-
-	<div id="mobile-menu" class="menu">
-		<nav>
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/about">About Us</HeaderLink>
-			<HeaderLink href="/services">Services</HeaderLink>
-			<HeaderLink href="/projects">Projects</HeaderLink>
-			<HeaderLink href="/safety">Safety</HeaderLink>
-			<HeaderLink href="/careers">Careers</HeaderLink>
-			<HeaderLink href="/contact">Contact</HeaderLink>
-		</nav>
-	</div>
 </header>
 
 <script>
