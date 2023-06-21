@@ -1,0 +1,21 @@
+@import "variables";
+
+.qualities {
+  padding: 2rem;
+  .container {
+    .row {
+      @include flex-between();
+      align-items: flex-start;
+      margin-bottom: 3rem;
+
+      &:nth-last-of-type(1) {
+        margin-bottom: 0;
+      }
+
+      .quality-item {
+        width: 300px;
+        text-align: center;
+      }
+    }
+  }
+}

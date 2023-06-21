@@ -57,6 +57,10 @@ img {
   height: auto;
 }
 
+li {
+  list-style: none;
+}
+
 .btn {
   background-color: $primary;
   color: #fff;
@@ -79,8 +83,30 @@ img {
   margin: auto;
 }
 
+.heading {
+  @include flex-center();
+  flex-direction: column;
+  h2 {
+    color: $primary;
+    font-size: 2rem;
+  }
+  .line {
+    margin: 1rem 0 3rem;
+    border-bottom: 2px solid $primary;
+    width: 60px;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .container {
     padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .heading {
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 }
