@@ -1,28 +1,21 @@
 @import "variables";
 
 .header {
+  @include flex-between();
   position: sticky;
   top: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  height: 100px;
   padding: 1rem;
-  width: 260px;
-  background: #fff;
-  height: 100vh;
+  background: $light-blue;
+  z-index: 1000;
 
   .logo {
-    max-width: 206px;
-    max-height: 200px;
+    max-width: 100px;
+    max-height: 100px;
   }
 
   .nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 5rem;
+    @include flex-center();
 
     a {
       margin: 5px 0;
@@ -31,6 +24,7 @@
       text-transform: uppercase;
       color: #333;
       letter-spacing: 1px;
+      margin: 0 5px;
 
       &.active {
         color: $primary;
