@@ -5,9 +5,10 @@ export interface Props {
   title?: string;
   image?: string;
   overlay?: boolean;
+  button?: boolean;
 }
 
-const { title = "Perma-Cast", image, overlay } = Astro.props as Props;
+const { title = "Perma-Cast", image, overlay, button } = Astro.props as Props;
 ---
 
 <section class="hero">
@@ -38,6 +39,12 @@ const { title = "Perma-Cast", image, overlay } = Astro.props as Props;
       bar in all disciplines, including commercial and industrial concrete
       foundations, multi-level parkades, high-rises, and water reservoirs.
     </p>
-    <a href="/contact"></a><button class="btn">Request a Quote</button>
+    {
+      button && (
+        <a href="/contact">
+          <button class="btn">Request a Quote</button>
+        </a>
+      )
+    }
   </div>
 </section>
