@@ -29,6 +29,10 @@ b {
 
 h1 {
   font-size: 2rem;
+  border-bottom: 2px solid #000;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 a {
   text-decoration: none;
@@ -52,6 +56,18 @@ input {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.btn {
+  background-color: $primary;
+  color: #fff;
+  margin-top: 10px;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .container {
