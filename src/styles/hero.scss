@@ -46,3 +46,32 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .hero {
+    height: 80vh;
+    .container {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .hero {
+    .container {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      a {
+        width: 100%;
+
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
