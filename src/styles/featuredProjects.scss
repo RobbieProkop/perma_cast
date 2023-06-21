@@ -2,4 +2,30 @@
 
 .featured {
   background-color: $gray;
+  text-align: center;
+
+  .heading {
+    @include flex-center();
+    flex-direction: column;
+    h2 {
+      color: $primary;
+    }
+    .line {
+      margin: 1rem 0;
+      border-bottom: 2px solid $primary;
+      width: 60px;
+    }
+  }
+  .flex {
+    @include flex-between();
+    .item {
+      padding: 1rem;
+      img {
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
 }
