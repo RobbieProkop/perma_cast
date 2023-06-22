@@ -51,3 +51,18 @@
     }
   }
 }
+
+@media screen and (max-width: 400px) {
+  .qualities {
+    padding: 1rem 0;
+    .container {
+      .row {
+        .quality-item {
+          h3 {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
