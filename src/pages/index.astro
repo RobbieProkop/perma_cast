@@ -1,20 +1,17 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE } from "../consts";
+
+import Layout from "../layouts/Layout.astro";
 import FeaturedProjects from "../components/FeaturedProjects.astro";
 import OurQualities from "../components/OurQualities.astro";
 import TrustedClients from "../components/TrustedClients.astro";
 import ContactHome from "../components/ContactHome.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
+<Layout>
 	<body>
 		<Header title={SITE_TITLE} />
 		<main>
@@ -35,4 +32,4 @@ import ContactHome from "../components/ContactHome.astro";
 		</main>
 		<Footer />
 	</body>
-</html>
+</Layout>

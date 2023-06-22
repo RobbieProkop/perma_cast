@@ -3,9 +3,6 @@ import "../styles/header.scss";
 import HeaderLink from "./HeaderLink.astro";
 
 const logo = "/assets/logo.png";
-const insta = "/assets/icons/insta.png";
-const fb = "/assets/icons/fb.png";
-const linkedin = "/assets/icons/linkedin.png";
 ---
 
 <header class="header">
@@ -26,21 +23,32 @@ const linkedin = "/assets/icons/linkedin.png";
 	<div id="hamberger" class="hamberger"><div></div></div>
 
 	<nav class="menu">
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/about">About Us</HeaderLink>
-		<HeaderLink href="/services">Services</HeaderLink>
-		<HeaderLink href="/projects">Projects</HeaderLink>
-		<HeaderLink href="/safety">Safety</HeaderLink>
-		<HeaderLink href="/careers">Careers</HeaderLink>
-		<HeaderLink href="/contact">Contact</HeaderLink>
+		<HeaderLink class="menu-link" href="/">Home</HeaderLink>
+		<HeaderLink class="menu-link" href="/about">About Us</HeaderLink>
+		<HeaderLink class="menu-link" href="/services">Services</HeaderLink>
+		<HeaderLink class="menu-link" href="/projects">Projects</HeaderLink>
+		<HeaderLink class="menu-link" href="/safety">Safety</HeaderLink>
+		<HeaderLink class="menu-link" href="/careers">Careers</HeaderLink>
+		<HeaderLink class="menu-link" href="/contact">Contact</HeaderLink>
 	</nav>
 </header>
 
 <script>
 	const open = document.getElementById("open-menu") as HTMLInputElement;
 	const hamberger = document.getElementById("hamberger") as HTMLElement;
+	const links = document.querySelectorAll(".menu-link") as NodeListOf<Element>;
+
+	// window.addEventListener("load", () => {
+	// 	open.checked = false;
+	// });
 
 	hamberger.addEventListener("click", () => {
 		open.checked = !open.checked;
+	});
+
+	links.forEach((link) => {
+		link.addEventListener("click", () => {
+			open.checked = false;
+		});
 	});
 </script>
