@@ -1,4 +1,4 @@
-export const management = [
+export const leads = [
   {
     name: "JOHN MCLEOD",
     position: "Executive Board Member",

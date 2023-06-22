@@ -1,31 +1,38 @@
-.management {
+.team {
   padding: 2rem 0;
   .container {
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-      row-gap: 3rem;
-      // column-gap: 1rem;
+    article {
+      padding: 2rem 0;
 
-      .person {
-        img {
-          max-height: 347px;
-          max-width: 80%;
-          object-fit: cover;
-          object-position: center;
-          aspect-ratio: 1/1;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+        row-gap: 3rem;
+        // column-gap: 1rem;
+
+        .person {
+          img {
+            max-height: 347px;
+            max-width: 80%;
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 1/1;
+          }
         }
       }
     }
   }
 }
 
-@media screen and (max-width: 950px) {
-  .management {
+@media screen and (max-width: 750px) {
+  .team {
     .container {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
+      article {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 2rem;
+        }
       }
     }
   }
