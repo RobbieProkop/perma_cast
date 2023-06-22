@@ -1,0 +1,39 @@
+@import "variables";
+
+.contact-home {
+  background-color: $secondary;
+  padding: 3rem 0;
+  .container {
+    a {
+      @include flex-center;
+      flex-direction: column;
+      width: 100%;
+      button {
+        width: 40%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .contact-home {
+    .container {
+      a {
+        button {
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .contact-home {
+    .container {
+      a {
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
