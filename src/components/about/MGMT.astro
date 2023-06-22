@@ -1,0 +1,27 @@
+---
+import "../../styles/mgmt.scss";
+
+import { management } from "../../content/team/management";
+---
+
+<section class="management">
+  <div class="container">
+    <div class="heading">
+      <h2>OUR TALENTED MANAGEMENT TEAM</h2>
+      <div class="line"></div>
+    </div>
+    <div class="grid">
+      {
+        management.forEach((member) => {
+          console.log("managemt", member);
+          //   return (
+          //     <div class="person">
+          //       <h3>{member.name}</h3>
+          //       <p>{member.position}</p>
+          //     </div>
+          //   );
+        })
+      }
+    </div>
+  </div>
+</section>
