@@ -1,0 +1,32 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+
+import Process from "../components/services/Process.astro";
+import ContactHome from "../components/home/ContactHome.astro";
+---
+
+<Layout
+  title="Services Perma-Cast"
+  description="Perma-Cast Concrete Contracting Ltd. offers a wide range of concrete services, specializing in commercial and industrial concrete foundations."
+>
+  <body>
+    <Header />
+    <main>
+      <Hero
+        title="Services"
+        heroText="Perma-Cast Concrete Contracting Ltd. offers a wide range of concrete services, specializing in commercial and industrial concrete foundations. Our professional and experienced concrete forming team understands strict timelines and quality workmanship. We oversee every project from estimation and planning, to pre-pours and quality control checks."
+        image="/assets/hero/services.jpeg"
+        overlay={true}
+        button={true}
+      />
+
+      <Process />
+
+      <ContactHome />
+    </main>
+    <Footer />
+  </body>
+</Layout>
