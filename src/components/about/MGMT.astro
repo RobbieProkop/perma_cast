@@ -12,15 +12,13 @@ import { management } from "../../content/team/management";
     </div>
     <div class="grid">
       {
-        management.forEach((member) => {
-          console.log("managemt", member);
-          //   return (
-          //     <div class="person">
-          //       <h3>{member.name}</h3>
-          //       <p>{member.position}</p>
-          //     </div>
-          //   );
-        })
+        management.map((member) => (
+          <div class="person">
+            <img src={member.image} alt="" role="presentation" />
+            <h3>{member.name}</h3>
+            <p>{member.position}</p>
+          </div>
+        ))
       }
     </div>
   </div>
