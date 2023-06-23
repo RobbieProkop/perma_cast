@@ -1,5 +1,6 @@
 @import "variables";
 .process {
+  padding: 2rem;
   .container {
     .grid {
       display: grid;
@@ -10,7 +11,31 @@
         .icon {
           @include flex-center;
           width: 100%;
+          img {
+            width: 64px;
+          }
         }
+
+        h3 {
+          margin: 1rem 0;
+        }
+        p {
+          max-width: 80%;
+          margin: auto;
+        }
+      }
+    }
+    .flex {
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      justify-content: center;
+      border: 1px solid blue;
+
+      img {
+        border: 1px solid red;
+        margin: auto;
       }
     }
   }

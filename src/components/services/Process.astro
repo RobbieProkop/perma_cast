@@ -28,6 +28,10 @@ const processSteps = [
     text: "Once the job is completed, our team will revisit to ensure the quality is to CSA standards and re-evaluate our strengths, weakness, threats and opportunities.",
   },
 ];
+
+import formwork from "/assets/process/formwork.jpg";
+import reinforcing from "/assets/process/reinforcing.jpg";
+import pump from "/assets/process/pump.jpg";
 ---
 
 <section class="process">
@@ -49,6 +53,16 @@ const processSteps = [
           </div>
         ))
       }
+    </div>
+
+    <div class="flex">
+      <img src={formwork} alt="image showing formwork service" loading="lazy" />
+      <img
+        src={reinforcing}
+        alt="image showing reinforcing service"
+        loading="lazy"
+      />
+      <img src={pump} alt="image showing pump service" loading="lazy" />
     </div>
   </div>
 </section>
