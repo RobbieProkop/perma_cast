@@ -3,7 +3,7 @@ title: Meredith
 slug: meredith
 client: Remington Development Corp.
 location: Calgary
-image: /assets/projects/original/meredith.jpeg
+image: /assets/projects/original/meredith.png
 featured: false
 completed: true
 ---

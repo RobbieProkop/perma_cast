@@ -3,7 +3,7 @@ title: Shaw Millenium Park
 slug: shaw-millenium-park
 client: Ellisdon
 location: Downtown, Calgary
-image: /assets/projects/original/shawMillenium.jpeg
+image: /assets/projects/original/shawMillenium.png
 featured: false
 completed: true
 ---
