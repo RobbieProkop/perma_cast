@@ -6,6 +6,15 @@ import * as featured2 from "../../content/projects/featured/2-QuaryPark.md";
 import * as featured3 from "../../content/projects/featured/3-FrontStreetMedical.md";
 
 
+interface Project {
+  frontmatter:{
+    title: string,
+    client: string,
+    location: string,
+    image: string,
+  };
+  content?: string;
+}
 
 export interface Props {
   title: string,
@@ -20,11 +29,19 @@ const {title, current, completed, featured} = Astro.props as Props
 const featuredArr = [featured1, featured2, featured3];
 
 
-let mapArr = featuredArr;
+let mapArr: any[] = featuredArr;
 
 if (current) {
-  const currentArr = await Astro.glob("../../content/projects/*.md")
+  const currentArr = await Astro.glob("../../content/projects/current/*.md");
+  mapArr = currentArr;
 }
+if (completed) {
+  const completedArr = await Astro.glob("../../content/projects/completed/*.md")
+  mapArr = completedArr;
+}
+
+
+
 ---
 
 <section class="featured">
