@@ -1,9 +1,6 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
 import Hero from "../components/Hero.astro";
 import MGMT from "../components/about/MGMT.astro";
-import ContactHome from "../components/home/ContactHome.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -11,19 +8,15 @@ import Layout from "../layouts/Layout.astro";
 	title="About Us"
 	description="About us - Learn about the history of our company, and about our wonderful staff"
 >
-	<body>
-		<Header />
-		<main>
-			<Hero
-				title="ABOUT US"
-				subHeading="The story behind perma-cast"
-				heroText="Founded in 1996, Perma-Cast is celebrating over 25 years of business in Alberta and continues to raise the bar in all disciplines, including commercial and industrial concrete foundations, multi-level parkades, high-rises, and water reservoirs. We are always expanding our knowledge in the latest technologies to continue to grow, innovate, and provide the highest quality service."
-				image="/assets/careers.png"
-				overlay={true}
-			/>
+	<main>
+		<Hero
+			title="ABOUT US"
+			subHeading="The story behind perma-cast"
+			heroText="Founded in 1996, Perma-Cast is celebrating over 25 years of business in Alberta and continues to raise the bar in all disciplines, including commercial and industrial concrete foundations, multi-level parkades, high-rises, and water reservoirs. We are always expanding our knowledge in the latest technologies to continue to grow, innovate, and provide the highest quality service."
+			image="/assets/careers.png"
+			overlay={true}
+		/>
 
-			<MGMT />
-		</main>
-		<Footer />
-	</body>
+		<MGMT />
+	</main>
 </Layout>

@@ -1,25 +1,19 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import OurProjects from "../components/OurProjects.astro";
 ---
 
 <Layout>
-  <body>
-    <Header />
-    <main>
-      <Hero
-        title="Our Projects"
-        heroText="For over 25 years, clients have selected Perma-Cast to complete their challenging projects on time, under budget, and with superior quality performance. As a member of the Calgary Construction Association (CAA) and with a Certificate of Recognition (COR), Perma-Cast continues to raise the bar in all disciplines, including commercial and industrial concrete foundations, multi-level parkades, high-rises, and water reservoirs."
-        image="/assets/projects/original/QP1revised.png"
-        overlay={true}
-      />
+  <main>
+    <Hero
+      title="Our Projects"
+      heroText="For over 25 years, clients have selected Perma-Cast to complete their challenging projects on time, under budget, and with superior quality performance. As a member of the Calgary Construction Association (CAA) and with a Certificate of Recognition (COR), Perma-Cast continues to raise the bar in all disciplines, including commercial and industrial concrete foundations, multi-level parkades, high-rises, and water reservoirs."
+      image="/assets/projects/original/QP1revised.png"
+      overlay={true}
+    />
 
-      <OurProjects title="CURRENT PROJECTS" isCurrent={true} />
-      <OurProjects title="COMPLETED PROJECTS" isCompleted={true} />
-    </main>
-    <Footer />
-  </body>
+    <OurProjects title="CURRENT PROJECTS" isCurrent={true} />
+    <OurProjects title="COMPLETED PROJECTS" isCompleted={true} />
+  </main>
 </Layout>
