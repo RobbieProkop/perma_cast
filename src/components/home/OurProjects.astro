@@ -44,25 +44,29 @@ if (completed) {
 
     <div class="flex">
       
-      {mapArr.map(featured => {
-        const {title, image, client, location} = featured.frontmatter
+      {mapArr.map(project => {
+        const {title, image, client, location} = project.frontmatter
         return (
-        <div class="item">
-          <h3>{title}</h3>
-          <img
-            src={image}
-            alt=`${title} project image`
-            loading="lazy"
-          />
-          <div class="text">
-            <p>{client}</p>
-            <p>{location}</p>
-          </div>
-        </div>)
+    
+        <a href="/[slug]">
+            <div class="item">
+              <h3>{title}</h3>
+              <img
+                src={image}
+                alt=`${title} project image`
+                loading="lazy"
+              />
+              <div class="text">
+                <p>{client}</p>
+                <p>{location}</p>
+              </div>
+            </div> 
+          </a>
+        )
 
       })}
     </div>
 
-    <a href="/projects"><button class="btn">View More</button></a>
+    {featured && <a href="/projects"><button class="btn">View More</button></a>}
   </div>
 </section>

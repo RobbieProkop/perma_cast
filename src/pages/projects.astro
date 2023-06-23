@@ -3,7 +3,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import FeaturedProjects from "../components/home/OurProjects.astro";
+import Projects from "../components/home/OurProjects.astro";
 ---
 
 <Layout>
@@ -17,7 +17,8 @@ import FeaturedProjects from "../components/home/OurProjects.astro";
         overlay={true}
       />
 
-      <FeaturedProjects title="CURRENT PROJECTS" current={true} />
+      <Projects title="CURRENT PROJECTS" current={true} />
+      <Projects title="COMPLETED PROJECTS" completed={true} />
     </main>
     <Footer />
   </body>
