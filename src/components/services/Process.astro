@@ -1,29 +1,29 @@
 ---
 import "../../styles/process.scss";
 
-const procesSteps = [
+const processSteps = [
   {
-    icon: "/assets/icons/",
+    icon: "/assets/icons/insta.png",
     title: "1. REQUEST A BID",
     text: "Request sent through email, contact tab on website, fax or phone.",
   },
   {
-    icon: "/assets/icons/",
+    icon: "/assets/icons/insta.png",
     title: "2. PRELIMINARY PLANNING",
     text: "Upon award, review of all drawings reflecting our scope. Diagnosing scheduling and budget conflicts, RFI’s and clarifications will be issued.",
   },
   {
-    icon: "/assets/icons/",
+    icon: "/assets/icons/insta.png",
     title: "3. LEAN PLANNER SYSTEM",
     text: "Work through a series of principles to achieve a waste free operation, maximizing customer value by extracting major milestones and pulling back to achieve a high level schedule and budget.",
   },
   {
-    icon: "/assets/icons/",
+    icon: "/assets/icons/insta.png",
     title: "4. CONSTRUCTION PHASE",
     text: "Once material deliveries, pour sequences and lay-down areas are clear, the construction phase will start. Our site safety representative will integrate the construction plan in accordance with Perma-Cast’s safety policy.",
   },
   {
-    icon: "/assets/icons/",
+    icon: "/assets/icons/insta.png",
     title: "6. COMPLETION & QA CHECK",
     text: "Once the job is completed, our team will revisit to ensure the quality is to CSA standards and re-evaluate our strengths, weakness, threats and opportunities.",
   },
@@ -37,6 +37,18 @@ const procesSteps = [
       <div class="line"></div>
     </div>
 
-    <div class="grid"></div>
+    <div class="grid">
+      {
+        processSteps.map((step) => (
+          <div class="step">
+            <div class="icon">
+              <img src={step.icon} alt="" role="presentation" />
+            </div>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>

@@ -1,8 +1,17 @@
+@import "variables";
 .process {
   .container {
     .grid {
       display: grid;
-      // grid-template-columns: repeat(3);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+
+      .step {
+        .icon {
+          @include flex-center;
+          width: 100%;
+        }
+      }
     }
   }
 }
