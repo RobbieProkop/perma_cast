@@ -42,18 +42,16 @@ if(isFeatured){
       <div class="line"></div>
     </div>
 
-    <div class="flex">
-      
-      {isFeatured ? (
+    <div class="flex">   
+      {mapArr.map(project => {
+        const {title, slug, image, client, location, featured, completed} = project.frontmatter
 
-       mapArr.map(project => {
-        const {title, slug, image, client, location, featured} = project.frontmatter
-
-        if(!featured) return;
+        if(isFeatured && !featured) return;
+        if(isCompleted && !completed) return;
+        if(isCurrent && completed) return;
 
         return (
-    
-        <a href={slug}>
+          <a href={slug}>
             <div class="item">
               <h3>{title}</h3>
               <img
@@ -67,62 +65,9 @@ if(isFeatured){
               </div>
             </div> 
           </a>
-        )
-
-        }
-      )
-    ) : isCompleted ? (
-    mapArr.map(project => {
-        const {title, slug, image, client, location, completed} = project.frontmatter
-
-        if(!completed) return
-
-        return (
-    
-        <a href={slug}>
-            <div class="item">
-              <h3>{title}</h3>
-              <img
-                src={image}
-                alt=`${title} project image`
-                loading="lazy"
-              />
-              <div class="text">
-                <p>{client}</p>
-                <p>{location}</p>
-              </div>
-            </div> 
-          </a>
-        )
-
-      })
-    ) : (
-    mapArr.map(project => {
-        const {title, slug, image, client, location, completed} = project.frontmatter
-
-        if(completed) return
-
-        return (
-    
-        <a href={slug}>
-            <div class="item">
-              <h3>{title}</h3>
-              <img
-                src={image}
-                alt=`${title} project image`
-                loading="lazy"
-              />
-              <div class="text">
-                <p>{client}</p>
-                <p>{location}</p>
-              </div>
-            </div> 
-          </a>
-        )
-
-      })
-    )
-  } 
+          )
+        })
+      } 
 
     </div>
 
