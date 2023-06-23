@@ -16,6 +16,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+@mixin grid-2() {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
 $primary: #677698;
 $primary-opacity: rgba(103, 118, 152, 0.8);
