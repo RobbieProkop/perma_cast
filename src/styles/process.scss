@@ -1,6 +1,6 @@
 @import "variables";
 .process {
-  padding: 2rem;
+  padding: 2rem 0;
   .container {
     .grid {
       display: grid;
@@ -16,16 +16,19 @@
           }
         }
 
-        h3 {
-          margin: 1rem 0;
-        }
+        h3,
         p {
           max-width: 80%;
           margin: auto;
         }
+
+        h3 {
+          padding: 1rem 0;
+          text-align: left;
+        }
       }
     }
-    .flex {
+    .services {
       margin: 3rem 0;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -53,6 +56,100 @@
         img {
           object-fit: contain;
           object-position: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .process {
+    .container {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+
+        .step {
+          h3,
+          p {
+            max-width: 100%;
+          }
+        }
+      }
+      .services {
+        .service-image {
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .process {
+    .container {
+      .grid {
+        .step {
+          h3 {
+            height: 80px;
+            padding-bottom: 0;
+          }
+        }
+      }
+      .services {
+        @include flex-center;
+        flex-direction: column;
+        .service-image {
+          h3 {
+            font-size: 1.5rem;
+          }
+
+          img {
+            max-width: 500px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .process {
+    .container {
+      .grid {
+        grid-template-columns: 1fr;
+
+        .step {
+          h3 {
+            height: unset;
+            padding-bottom: 1rem;
+          }
+        }
+      }
+
+      .services {
+        .service-image {
+          img {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .process {
+    padding: 2rem 0;
+
+    .container {
+      .services {
+        .service-image {
+          img {
+            max-width: 100%;
+          }
         }
       }
     }
