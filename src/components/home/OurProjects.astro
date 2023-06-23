@@ -1,20 +1,20 @@
 ---
 import "../../styles/featuredProjects.scss";
 
-import * as featured1 from "../../content/projects/featured/1-NewHorizon.md";
-import * as featured2 from "../../content/projects/featured/2-QuaryPark.md";
-import * as featured3 from "../../content/projects/featured/3-FrontStreetMedical.md";
+import * as featured1 from "../../content/projects/1-NewHorizon.md";
+import * as featured2 from "../../content/projects/2-QuaryPark.md";
+import * as featured3 from "../../content/projects/3-FrontStreetMedical.md";
 
 
 
 export interface Props {
   title: string,
-  current?: boolean,
-  completed?: boolean,
-  featured?: boolean,
+  isCurrent?: boolean,
+  isCompleted?: boolean,
+  isFeatured?: boolean,
 }
 
-const {title, current, completed, featured} = Astro.props as Props
+const {title, isCurrent, isCompleted, isFeatured} = Astro.props as Props
 
 //get Markdown files for featured, current, and completed projects
 const featuredArr = [featured1, featured2, featured3];
@@ -22,13 +22,13 @@ const featuredArr = [featured1, featured2, featured3];
 
 let mapArr: any[] = featuredArr;
 
-if (current) {
-  const currentArr = await Astro.glob("../../content/projects/current/*.md");
-  mapArr = currentArr;
+if (isCurrent || isCompleted) {
+  const projectsArr = await Astro.glob("../../content/projects/*.md");
+  mapArr = projectsArr;
 }
-if (completed) {
-  const completedArr = await Astro.glob("../../content/projects/completed/*.md")
-  mapArr = completedArr;
+
+if(isFeatured){
+  mapArr = featuredArr;
 }
 
 
@@ -44,11 +44,16 @@ if (completed) {
 
     <div class="flex">
       
-      {mapArr.map(project => {
-        const {title, image, client, location} = project.frontmatter
+      {isFeatured ? (
+
+       mapArr.map(project => {
+        const {title, slug, image, client, location, featured} = project.frontmatter
+
+        if(!featured) return;
+
         return (
     
-        <a href="/[slug]">
+        <a href={slug}>
             <div class="item">
               <h3>{title}</h3>
               <img
@@ -64,9 +69,63 @@ if (completed) {
           </a>
         )
 
-      })}
+        }
+      )
+    ) : isCompleted ? (
+    mapArr.map(project => {
+        const {title, slug, image, client, location, completed} = project.frontmatter
+
+        if(!completed) return
+
+        return (
+    
+        <a href={slug}>
+            <div class="item">
+              <h3>{title}</h3>
+              <img
+                src={image}
+                alt=`${title} project image`
+                loading="lazy"
+              />
+              <div class="text">
+                <p>{client}</p>
+                <p>{location}</p>
+              </div>
+            </div> 
+          </a>
+        )
+
+      })
+    ) : (
+    mapArr.map(project => {
+        const {title, slug, image, client, location, completed} = project.frontmatter
+
+        if(completed) return
+
+        return (
+    
+        <a href={slug}>
+            <div class="item">
+              <h3>{title}</h3>
+              <img
+                src={image}
+                alt=`${title} project image`
+                loading="lazy"
+              />
+              <div class="text">
+                <p>{client}</p>
+                <p>{location}</p>
+              </div>
+            </div> 
+          </a>
+        )
+
+      })
+    )
+  } 
+
     </div>
 
-    {featured && <a href="/projects"><button class="btn">View More</button></a>}
+    {isFeatured && <a href="/projects"><button class="btn">View More</button></a>}
   </div>
 </section>

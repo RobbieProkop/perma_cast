@@ -1,0 +1,5 @@
+---
+export async function getStaticPaths() {
+  const projects = await Astro.glob("../../content/projects/*.md");
+}
+---
