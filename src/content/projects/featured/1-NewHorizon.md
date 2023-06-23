@@ -3,6 +3,4 @@ title: New Horizon Mall
 client: Ledcor
 location: Balzac
 image: /assets/projects/original/newHorizon.jpeg
-image2: /assets/projects/original/newHorizon.jpeg
-image3: /assets/projects/original/newHorizon.jpeg
 ---

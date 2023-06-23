@@ -1,22 +1,42 @@
 ---
 import "../../styles/featuredProjects.scss";
 
-import * as featured1 from "../../content/projects/1.md";
-import * as featured2 from "../../content/projects/2.md";
-import * as featured3 from "../../content/projects/3.md";
+import * as featured1 from "../../content/projects/featured/1-NewHorizon.md";
+import * as featured2 from "../../content/projects/featured/2-QuaryPark.md";
+import * as featured3 from "../../content/projects/featured/3-FrontStreetMedical.md";
 
+
+
+export interface Props {
+  title: string,
+  current?: boolean,
+  completed?: boolean,
+  featured?: boolean,
+}
+
+const {title, current, completed, featured} = Astro.props as Props
+
+//get Markdown files for featured, current, and completed projects
 const featuredArr = [featured1, featured2, featured3];
+
+
+let mapArr = featuredArr;
+
+if (current) {
+  const currentArr = await Astro.glob("../../content/projects/*.md")
+}
 ---
 
 <section class="featured">
   <div class="container">
     <div class="heading">
-      <h2>OUR PROJECTS</h2>
+      <h2>{title}</h2>
       <div class="line"></div>
     </div>
 
     <div class="flex">
-      {featuredArr.map(featured => {
+      
+      {mapArr.map(featured => {
         const {title, image, client, location} = featured.frontmatter
         return (
         <div class="item">

@@ -2,13 +2,8 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
-import { SITE_TITLE } from "../consts";
-
 import Layout from "../layouts/Layout.astro";
 import FeaturedProjects from "../components/home/OurProjects.astro";
-import OurQualities from "../components/home/OurQualities.astro";
-import TrustedClients from "../components/home/TrustedClients.astro";
-import ContactHome from "../components/home/ContactHome.astro";
 ---
 
 <Layout>
@@ -22,7 +17,7 @@ import ContactHome from "../components/home/ContactHome.astro";
         overlay={true}
       />
 
-      <FeaturedProjects />
+      <FeaturedProjects title="CURRENT PROJECTS" current={true} />
     </main>
     <Footer />
   </body>
