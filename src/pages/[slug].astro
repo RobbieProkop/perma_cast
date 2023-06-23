@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
 
 export async function getStaticPaths() {
   const projects = await Astro.glob("../content/projects/*.md");
@@ -17,4 +18,17 @@ export async function getStaticPaths() {
 const { Content, frontmatter } = Astro.props.project;
 ---
 
-<Layout title={frontmatter.title}>Hellow</Layout>
+<Layout title={frontmatter.title}>
+  <!-- <Hero title={frontmatter.title} overlay={true} image={frontmatter.image} /> -->
+  <section class="page-content">
+    <div class="container">
+      <Card dark={true}>
+        <a href="/projects">
+          <button class="btn">Go Back</button>
+        </a>
+        <h2>{frontmatter.title}</h2>
+        <Content />
+      </Card>
+    </div>
+  </section>
+</Layout>
