@@ -9,24 +9,24 @@
       flex-direction: column;
       width: 100%;
       button {
-        width: 40%;
+        width: 30%;
       }
     }
   }
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 940px) {
   .contact-home {
     .container {
       a {
         button {
-          width: 60%;
+          width: 50%;
         }
       }
     }
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 450px) {
   .contact-home {
     .container {
       a {
