@@ -31,11 +31,29 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       justify-content: center;
-      border: 1px solid blue;
 
-      img {
-        border: 1px solid red;
-        margin: auto;
+      .service-image {
+        position: relative;
+        @include flex-center;
+        h3 {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          font-size: 2rem;
+          color: #fff;
+          z-index: 2;
+        }
+        .overlay {
+          position: absolute;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.4);
+          z-index: 1;
+        }
+        img {
+          object-fit: contain;
+          object-position: center;
+        }
       }
     }
   }

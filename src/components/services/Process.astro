@@ -29,9 +29,9 @@ const processSteps = [
   },
 ];
 
-import formwork from "/assets/process/formwork.jpg";
-import reinforcing from "/assets/process/reinforcing.jpg";
-import pump from "/assets/process/pump.jpg";
+import formwork from "/assets/process/formwork.jpeg";
+import reinforcing from "/assets/process/reinforcing.jpeg";
+import pump from "/assets/process/pump.jpeg";
 ---
 
 <section class="process">
@@ -56,13 +56,21 @@ import pump from "/assets/process/pump.jpg";
     </div>
 
     <div class="flex">
-      <img src={formwork} alt="image showing formwork service" loading="lazy" />
-      <img
-        src={reinforcing}
-        alt="image showing reinforcing service"
-        loading="lazy"
-      />
-      <img src={pump} alt="image showing pump service" loading="lazy" />
+      <div class="service-image">
+        <h3>FORMWORK</h3>
+        <div class="overlay"></div>
+        <img src={formwork} alt="" role="presentation" loading="lazy" />
+      </div>
+      <div class="service-image">
+        <h3>REINGFORCING INSTALLATION</h3>
+        <div class="overlay"></div>
+        <img src={reinforcing} alt="" role="presentation" loading="lazy" />
+      </div>
+      <div class="service-image">
+        <div class="overlay"></div>
+        <h3>PUMP PLACE & FINISH</h3>
+        <img src={pump} alt="" role="presentation" loading="lazy" />
+      </div>
     </div>
   </div>
 </section>
