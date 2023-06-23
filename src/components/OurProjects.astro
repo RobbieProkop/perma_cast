@@ -1,9 +1,9 @@
 ---
-import "../../styles/featuredProjects.scss";
+import "../styles/ourProjects.scss";
 
-import * as featured1 from "../../content/projects/1-NewHorizon.md";
-import * as featured2 from "../../content/projects/2-QuaryPark.md";
-import * as featured3 from "../../content/projects/3-FrontStreetMedical.md";
+import * as featured1 from "../content/projects/1-NewHorizon.md";
+import * as featured2 from "../content/projects/2-QuaryPark.md";
+import * as featured3 from "../content/projects/3-FrontStreetMedical.md";
 
 
 
@@ -23,7 +23,7 @@ const featuredArr = [featured1, featured2, featured3];
 let mapArr: any[] = featuredArr;
 
 if (isCurrent || isCompleted) {
-  const projectsArr = await Astro.glob("../../content/projects/*.md");
+  const projectsArr = await Astro.glob("../content/projects/*.md");
   mapArr = projectsArr;
 }
 
@@ -35,14 +35,14 @@ if(isFeatured){
 
 ---
 
-<section class="featured">
+<section class={isCurrent ? "featured pb0" : isCompleted?  "pt0 featured" : "featured" }>
   <div class="container">
     <div class="heading">
       <h2>{title}</h2>
       <div class="line"></div>
     </div>
 
-    <div class="flex">   
+    <div class="grid">   
       {mapArr.map(project => {
         const {title, slug, image, client, location, featured, completed} = project.frontmatter
 
