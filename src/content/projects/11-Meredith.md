@@ -1,9 +1,9 @@
 ---
-title: Kingsland Junction
-slug: kingsland-junction
-client: Trico Homes
-location: Kingsland, Calgary
-image: /assets/projects/original/kingsland.jpeg
+title: Meredith
+slug: meredith
+client: Remington Development Corp.
+location: Calgary
+image: /assets/projects/original/meredith.jpeg
 featured: false
 completed: true
 ---

@@ -1,9 +1,9 @@
 ---
-title: Shawnessy Station
-slug: shawnessy-station
-client: Trico Homes
-location: Shawnessy, Calgary
-image: /assets/projects/original/shawnessy.jpeg
+title: Brentwood Village Brio
+slug: brentwood-village-brio
+client: Cana Construction
+location: Calgary
+image: /assets/projects/original/brentwood.jpeg
 featured: false
 completed: true
 ---

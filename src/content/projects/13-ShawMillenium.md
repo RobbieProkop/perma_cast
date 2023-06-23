@@ -1,9 +1,9 @@
 ---
-title: YW Shelter
-slug: yw-shelter
-client: Cana Construction
-location: Calgary
-image: /assets/projects/original/YW.jpeg
+title: Shaw Millenium Park
+slug: shaw-millenium-park
+client: Ellisdon
+location: Downtown, Calgary
+image: /assets/projects/original/shawMillenium.jpeg
 featured: false
 completed: true
 ---

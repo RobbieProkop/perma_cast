@@ -1,9 +1,9 @@
 ---
-title: Kingsland Junction
-slug: kingsland-junction
-client: Trico Homes
-location: Kingsland, Calgary
-image: /assets/projects/original/kingsland.jpeg
+title: YW Hub Facility
+slug: yw-hub-facility
+client: Cana Construction
+location: Calgary
+image: /assets/projects/original/ywhub.jpeg
 featured: false
 completed: true
 ---

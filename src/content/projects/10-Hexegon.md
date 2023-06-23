@@ -1,9 +1,9 @@
 ---
-title: YW Shelter
-slug: yw-shelter
-client: Cana Construction
+title: Hexegon
+slug: hexegon
+client: Remington Development Corp.
 location: Calgary
-image: /assets/projects/original/YW.jpeg
+image: /assets/projects/original/hexegon.jpeg
 featured: false
 completed: true
 ---

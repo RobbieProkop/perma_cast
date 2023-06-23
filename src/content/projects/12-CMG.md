@@ -1,9 +1,9 @@
 ---
-title: Shawnessy Station
-slug: shawnessy-station
-client: Trico Homes
-location: Shawnessy, Calgary
-image: /assets/projects/original/shawnessy.jpeg
+title: CMG (Computer Modelling Group)
+slug: cmg
+client: Remington Development Corp.
+location: Calgary
+image: /assets/projects/original/cmg.jpeg
 featured: false
 completed: true
 ---
