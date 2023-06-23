@@ -1,5 +1,6 @@
 ---
 title: Dalhousie Mixed Use
+slug: dalhousie-mixed-use
 client: Remington Developement Corp.
 location: Dalhousie, Calgary
 image: /assets/projects/original/dalhousie.jpeg

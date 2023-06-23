@@ -1,5 +1,6 @@
 ---
 title: Shawnessy Station
+slug: shawnessy-station
 client: Trico Homes
 location: Shawnessy, Calgary
 image: /assets/projects/original/shawnessy.jpeg
