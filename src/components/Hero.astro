@@ -1,4 +1,5 @@
 ---
+import { boolean } from "astro/zod";
 import "../styles/hero.scss";
 
 export interface Props {
@@ -7,6 +8,7 @@ export interface Props {
   heroText?: string;
   image?: string;
   overlay?: boolean;
+  overlayLight?: boolean;
   button?: boolean;
 }
 
@@ -16,12 +18,14 @@ const {
   heroText,
   image,
   overlay,
+  overlayLight,
   button,
 } = Astro.props as Props;
 ---
 
 <section class="hero">
   {overlay && <div class="overlay" />}
+  {overlayLight && <div class="overlay-light" />}
   {
     image && (
       <div class="hero-bg">

@@ -1,14 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
 import Hero from "../components/Hero.astro";
 import ContactForm from "../components/ContactForm.astro";
 
 import "../styles/contact.scss";
+
+const image = "/assets/contact.png";
 ---
 
 <Layout title="Contact Us">
-  <!-- <div class="contact-hero">
-    <Hero title="Contact Us" image="/assets/contact.png" overlay={true} />
-  </div> -->
+  <div class="contact-hero">
+    <Hero title="Contact Us" image={image} overlayLight={true} />
+  </div>
   <ContactForm fileUpload={false} />
 </Layout>
