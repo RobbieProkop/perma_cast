@@ -12,6 +12,12 @@
   justify-content: space-between;
 }
 
+@mixin flex-evenly() {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 @mixin grid-4() {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

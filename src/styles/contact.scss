@@ -19,8 +19,7 @@
   padding-top: 2rem;
   background: #faf8f8;
   .container {
-    @include flex-center;
-    justify-content: space-evenly;
+    @include flex-evenly;
     gap: 2rem;
 
     .text {
@@ -74,6 +73,76 @@
             .btn {
               width: 100%;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 887px) {
+  .column {
+    .container {
+      flex-direction: column;
+
+      .text {
+        @include flex-evenly;
+        width: 100%;
+
+        .text-group {
+          height: 132px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 623px) {
+  .column {
+    .container {
+      .text {
+        .text-group {
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .column {
+    .container {
+      gap: 0;
+      .text {
+        flex-direction: column;
+
+        .text-group {
+          margin: 0;
+        }
+      }
+      .contact {
+        .container {
+          .card {
+            max-width: 400px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .column {
+    overflow-x: hidden;
+    .container {
+      padding: 1rem 0;
+      .contact {
+        .container {
+          .card {
+            max-width: 300px;
+            padding: 20px 10px;
           }
         }
       }
