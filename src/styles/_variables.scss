@@ -12,6 +12,10 @@
   justify-content: space-between;
 }
 
+@mixin grid-4() {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 @mixin grid-3() {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

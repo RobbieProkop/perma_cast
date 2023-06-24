@@ -1,9 +1,44 @@
+@import "variables";
+
 .safety {
   .hero {
     .container {
       h1 {
         font-size: 3rem;
       }
+    }
+  }
+}
+
+.safety-text {
+  p {
+    margin: 1.5rem;
+  }
+  p:nth-child(1) {
+    margin-top: 3rem;
+  }
+
+  .grid {
+    @include grid-4;
+    gap: 1rem;
+
+    .certificate {
+      @include flex-center;
+      flex-direction: column;
+
+      div {
+        @include flex-center;
+        min-height: 100px;
+        margin-bottom: 2rem;
+
+        img {
+          max-width: 200px;
+        }
+      }
+
+      // h3 {
+      //   margin-top: auto;
+      // }
     }
   }
 }
