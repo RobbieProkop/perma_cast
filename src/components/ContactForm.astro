@@ -13,11 +13,11 @@ const { fileUpload } = Astro.props as Props;
     <Card>
       <form class="form" name="contact" method="POST" data-netlify="true">
         <div class="form-group">
-          <label for="name">Your Name (required)</label>
+          <label for="name">Name (required)</label>
           <input type="text" id="name" name="name" placeholder="Enter Name" />
         </div>
         <div class="form-group">
-          <label for="email">Your Email (required)</label>
+          <label for="email">Email (required)</label>
           <input
             type="email"
             id="email"
@@ -38,7 +38,7 @@ const { fileUpload } = Astro.props as Props;
           <textarea
             id="message"
             name="message"
-            rows="10"
+            rows="5"
             placeholder="Write a message"></textarea>
         </div>
         <button class="btn btn-primary btn-block" id="formBtn" type="submit"
