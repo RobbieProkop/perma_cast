@@ -11,7 +11,14 @@ const { fileUpload } = Astro.props as Props;
 <section class="contact">
   <div class="container">
     <Card>
-      <form class="form" name="contact" method="POST" data-netlify="true">
+      <form
+        class="form"
+        name="contact"
+        id="form"
+        method="POST"
+        enctype="multipart/form-data"
+        data-netlify="true"
+      >
         <div class="form-group">
           <label for="name">Name (required)</label>
           <input type="text" id="name" name="name" placeholder="Enter Name" />
@@ -41,7 +48,19 @@ const { fileUpload } = Astro.props as Props;
             rows="5"
             placeholder="Write a message"></textarea>
         </div>
-        <div class="form-group"></div>
+        {
+          fileUpload && (
+            <div class="form-group">
+              <input
+                type="file"
+                id="file"
+                accept=".jpg, jpeg, .png, .pdf, "
+                class="btn-resume"
+              />
+              <span id="errorInfo" class="error" />
+            </div>
+          )
+        }
         <button class="btn btn-primary btn-block" id="formBtn" type="submit"
           >Submit</button
         >
@@ -49,3 +68,33 @@ const { fileUpload } = Astro.props as Props;
     </Card>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("form") as HTMLInputElement;
+  const file = document.getElementById("file") as HTMLInputElement;
+  const errSpan = document.getElementById("errorInfo") as HTMLElement;
+
+  const validateSize = () => {
+    if (!file || !file.files) throw new Error("Error");
+    if (!file.files[0]) throw new Error("No File Selected");
+    const size = file.files[0].size;
+    if (size && size > 1000000) {
+      errSpan.textContent = "File size exceded limit of 5mb";
+
+      const err = new Error("File greater than 5mb");
+      return err;
+    }
+
+    return false;
+  };
+
+  file.addEventListener("change", (e) => {
+    e.preventDefault();
+    validateSize();
+
+    // if size is greater than 5mb
+    // if (size && size > 1000000) {
+    //   alert("file must be less than 5mb");
+    // }
+  });
+</script>
