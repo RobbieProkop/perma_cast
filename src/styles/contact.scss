@@ -1,0 +1,38 @@
+@import "variables";
+
+.contact-hero {
+  .hero {
+    .overlay {
+      background-color: rgba(68, 68, 68, 0.4);
+    }
+    h1 {
+      font-size: 3rem;
+    }
+  }
+}
+
+.contact {
+  background: rgba(68, 68, 68, 0.1);
+  .container {
+    .form {
+      padding: 1rem;
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          padding-left: 5px;
+        }
+        input,
+        textarea {
+          padding: 0.6rem 1rem;
+          margin: 0.8rem 0 1rem;
+          border: 1px solid #333;
+          border-radius: 5px;
+
+          font-family: inherit;
+        }
+      }
+    }
+  }
+}

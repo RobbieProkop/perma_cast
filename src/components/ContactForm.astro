@@ -1,0 +1,50 @@
+---
+import Card from "../components/Card.astro";
+
+export interface Props {
+  fileUpload: boolean;
+}
+
+const { fileUpload } = Astro.props as Props;
+---
+
+<section class="contact">
+  <div class="container">
+    <Card>
+      <form class="form" name="contact" method="POST" data-netlify="true">
+        <div class="form-group">
+          <label for="name">Your Name (required)</label>
+          <input type="text" id="name" name="name" placeholder="Enter Name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email (required)</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter E-mail"
+          />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Enter Subject"
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            id="message"
+            name="message"
+            rows="10"
+            placeholder="Write a message"></textarea>
+        </div>
+        <button class="btn btn-primary btn-block" id="formBtn" type="submit"
+          >Submit</button
+        >
+      </form>
+    </Card>
+  </div>
+</section>
