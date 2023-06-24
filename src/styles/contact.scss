@@ -18,9 +18,29 @@
 .column {
   padding-top: 2rem;
   background: #faf8f8;
+
   .container {
     @include flex-evenly;
     gap: 2rem;
+
+    &.careers {
+      @include flex-center;
+      flex-direction: column;
+
+      .text {
+        width: 100%;
+        .text-group {
+          h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+          }
+          p {
+            max-width: 800px;
+            margin: 1rem auto;
+          }
+        }
+      }
+    }
 
     .text {
       align-self: flex-start;
@@ -61,7 +81,7 @@
               textarea {
                 padding: 0.6rem 1rem;
                 margin: 0 0 1rem;
-                border: 1px solid #333;
+                border: 1px solid $primary;
                 border-radius: 5px;
                 font-family: inherit;
               }
@@ -134,6 +154,13 @@
 }
 
 @media screen and (max-width: 425px) {
+  .contact-hero {
+    .hero {
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+  }
   .column {
     overflow-x: hidden;
     .container {
