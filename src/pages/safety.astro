@@ -1,0 +1,18 @@
+---
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import "../styles/safety.scss";
+import * as safetyText from "../content/safety.md";
+
+const { Content } = safetyText;
+---
+
+<Layout title="Safety">
+  <div class="safety">
+    <Hero title="Safety" image="/assets/safety/safety.jpeg" overlay={true} />
+  </div>
+
+  <div class="container">
+    <Content />
+  </div>
+</Layout>
