@@ -73,28 +73,43 @@ const { fileUpload } = Astro.props as Props;
   const form = document.getElementById("form") as HTMLInputElement;
   const file = document.getElementById("file") as HTMLInputElement;
   const errSpan = document.getElementById("errorInfo") as HTMLElement;
+  const name = document.getElementById("name") as HTMLInputElement;
+  const email = document.getElementById("email") as HTMLInputElement;
 
   const validateSize = () => {
     if (!file || !file.files) throw new Error("Error");
-    if (!file.files[0]) throw new Error("No File Selected");
+    if (!file.files[0]) {
+      errSpan.textContent = "No File Selected";
+      return false;
+    }
     const size = file.files[0].size;
-    if (size && size > 1000000) {
+    if (size && size > 5000000) {
       errSpan.textContent = "File size exceded limit of 5mb";
-
-      const err = new Error("File greater than 5mb");
-      return err;
+      return false;
     }
 
-    return false;
+    return true;
   };
 
-  file.addEventListener("change", (e) => {
-    e.preventDefault();
-    validateSize();
-
-    // if size is greater than 5mb
-    // if (size && size > 1000000) {
-    //   alert("file must be less than 5mb");
-    // }
+  form.addEventListener("submit", (e) => {
+    if (name.value.length === 0) {
+      e.preventDefault();
+      name.parentElement?.classList.add("error");
+      return;
+    }
+    if (name.parentElement?.classList.contains("error")) {
+      name.parentElement.classList.remove("error");
+    }
+    if (email.value.length === 0) {
+      e.preventDefault();
+      email.parentElement?.classList.add("error");
+      return;
+    }
+    if (email.parentElement?.classList.contains("error")) {
+      email.parentElement.classList.remove("error");
+    }
+    if (!validateSize()) {
+      e.preventDefault();
+    }
   });
 </script>

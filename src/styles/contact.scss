@@ -91,10 +91,22 @@
               }
               .btn-resume {
                 border: none;
+                padding: 0.6rem 0 0.2rem 0;
+                margin-bottom: 0;
+              }
+
+              &.error,
+              .error {
+                color: red;
+                font-size: 1.2rem;
               }
             }
             .btn {
               width: 100%;
+
+              &#formBtn {
+                margin-top: 1rem;
+              }
             }
           }
         }
