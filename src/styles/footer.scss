@@ -1,29 +1,32 @@
 @import "variables";
 .footer {
+  background-color: $secondary;
   .container {
     @include flex-between;
-    padding: 25px;
+    padding: 25px 0 25px 25px;
     margin: auto auto 0;
 
     .right {
       .logo {
-        max-width: 150px;
-        max-height: 150px;
+        max-width: 130px;
+        max-height: 130px;
       }
     }
 
     .copyright {
       // height: 100%;
-      // margin-top: auto;
+      margin-top: auto;
+      font-size: 1rem;
     }
 
     .left {
-      display: flex;
-      gap: 25px;
-      h3,
-      p {
-        font-size: 1rem;
-        text-align: left;
+      .text-group {
+        margin: 0.5rem 0;
+        h3,
+        p {
+          font-size: 1rem;
+          text-align: left;
+        }
       }
     }
   }
