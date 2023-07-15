@@ -3,7 +3,7 @@
   background-color: $secondary;
   .container {
     @include flex-between;
-    padding: 25px 0 25px 25px;
+    padding: 2rem 1rem 0 2rem;
     margin: auto auto 0;
 
     .right {
@@ -13,20 +13,45 @@
       }
     }
 
-    .copyright {
-      // height: 100%;
-      margin-top: auto;
-      font-size: 1rem;
-    }
-
     .left {
-      .text-group {
-        margin: 0.5rem 0;
-        h3,
-        p {
-          font-size: 1rem;
+      .phone {
+        h3 {
           text-align: left;
         }
+      }
+
+      .address {
+        @include flex-center;
+        gap: 25px;
+
+        .text-group {
+          margin: 0.5rem 0;
+          h3,
+          p {
+            font-size: 1rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    .container {
+      flex-direction: column;
+
+      padding: 25px 0 25px 0;
+
+      .left {
+        @include flex-center;
+        gap: 25px;
       }
     }
   }
