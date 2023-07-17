@@ -3,7 +3,7 @@ title: Brentwood Village Brio
 slug: brentwood-village-brio
 client: Cana Construction
 location: Calgary
-image: /assets/projects/original/brentwood.jpeg
+image: /assets/projects/webp/brentwood.webp
 featured: false
 completed: true
 ---

@@ -3,7 +3,7 @@ title: YW Shelter
 slug: yw-shelter
 client: Cana Construction
 location: Calgary
-image: /assets/projects/original/YW.jpeg
+image: /assets/projects/webp/yw.webp
 featured: false
 completed: false
 ---

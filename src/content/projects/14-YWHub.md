@@ -3,7 +3,7 @@ title: YW Hub Facility
 slug: yw-hub-facility
 client: Cana Construction
 location: Calgary
-image: /assets/projects/original/ywhub.jpeg
+image: /assets/projects/webp/ywhub.webp
 featured: false
 completed: true
 ---

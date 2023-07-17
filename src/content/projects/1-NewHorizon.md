@@ -3,7 +3,7 @@ title: New Horizon Mall
 slug: new-horizon-mall
 client: Ledcor
 location: Balzac
-image: /assets/projects/original/newHorizon.jpeg
+image: /assets/projects/webp/newHorizon.webp
 featured: true
 completed: true
 ---

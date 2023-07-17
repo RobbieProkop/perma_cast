@@ -3,7 +3,7 @@ title: Kingsland Junction
 slug: kingsland-junction
 client: Trico Homes
 location: Kingsland, Calgary
-image: /assets/projects/original/kingsland.jpeg
+image: /assets/projects/webp/kingsland.webp
 featured: false
 completed: false
 ---

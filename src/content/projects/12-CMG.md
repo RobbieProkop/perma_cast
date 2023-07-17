@@ -3,7 +3,7 @@ title: CMG (Computer Modelling Group)
 slug: cmg
 client: Remington Development Corp.
 location: Calgary
-image: /assets/projects/original/cmg.png
+image: /assets/projects/webp/cmg.webp
 featured: false
 completed: true
 ---
