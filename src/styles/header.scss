@@ -119,7 +119,7 @@
   }
   .toggler:checked ~ .menu {
     width: 100%;
-    height: 50vh;
+    height: 30vh;
 
     .item,
     .item.btn {
@@ -134,5 +134,22 @@
 
   .hidden {
     display: none;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .header {
+    .toggler:checked ~ .menu {
+      width: 100%;
+      height: 80vh;
+    }
+  }
+}
+@media screen and (max-height: 500px) {
+  .header {
+    .toggler:checked ~ .menu {
+      width: 100%;
+      height: 100vh;
+    }
   }
 }
