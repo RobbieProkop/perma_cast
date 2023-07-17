@@ -29,6 +29,7 @@
 
       .text {
         width: 100%;
+
         .text-group {
           h3 {
             text-align: center;
@@ -43,7 +44,15 @@
     }
 
     .text {
-      align-self: flex-start;
+      // align-self: flex-start;
+
+      .phone {
+        h3 {
+          text-align: left;
+          font-size: 2rem;
+          color: $primary;
+        }
+      }
       .text-group {
         margin: 2rem 0;
         h3 {
