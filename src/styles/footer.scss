@@ -59,11 +59,14 @@
       .left {
         flex-direction: column;
         gap: 25px;
-
+        margin: 2rem 0;
         .socials {
           margin-bottom: 1rem;
         }
       }
+      // .right {
+      //   margin-bottom: 2rem;
+      // }
     }
   }
 }
