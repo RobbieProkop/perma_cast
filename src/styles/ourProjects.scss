@@ -84,9 +84,12 @@
         }
       }
     }
+    .view-more {
+      grid-column: 1/3;
 
-    .btn {
-      width: 50%;
+      // .btn {
+      //   width: 50%;
+      // }
     }
   }
 }
@@ -94,7 +97,8 @@
 @media screen and (max-width: 650px) {
   .featured {
     .grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
 
       .item {
         .text {

@@ -41,7 +41,11 @@
       flex-direction: column;
       width: 100%;
       button {
+        transition: opacity 200ms ease-in-out;
         width: 30%;
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
@@ -60,6 +64,7 @@
 }
 @media screen and (max-width: 450px) {
   .contact-home {
+    min-height: 70vh;
     .container {
       a {
         button {
