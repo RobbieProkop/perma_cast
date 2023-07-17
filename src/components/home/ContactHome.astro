@@ -1,8 +1,29 @@
 ---
 import "../../styles/contactHome.scss";
+
+const image = "/assets/contact-home.jpeg";
+
+export interface Props {
+  overlay: boolean;
+}
+
+const { overlay } = Astro.props as Props;
 ---
 
 <section class="contact-home">
+  {overlay && <div class="overlay" />}
+  <div class="hero-bg">
+    <picture>
+      <img
+        src={image}
+        alt="header background image"
+        loading="eager"
+        role="presentation"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+  </div>
   <div class="container">
     <div class="heading">
       <h2>GET IN TOUCH!</h2>

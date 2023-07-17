@@ -3,7 +3,39 @@
 .contact-home {
   // background-color: $secondary;
   padding: 3rem 0;
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(68, 68, 68, 0.6);
+    z-index: 0;
+  }
+
+  .hero-bg {
+    img {
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
   .container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+
+    h2 {
+      color: #fff;
+    }
     a {
       @include flex-center;
       flex-direction: column;
