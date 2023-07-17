@@ -10,9 +10,10 @@
       .step {
         .icon {
           @include flex-center;
-          width: 100%;
+          max-width: 80%;
+          margin: auto;
           img {
-            width: 64px;
+            width: 48px;
           }
         }
 

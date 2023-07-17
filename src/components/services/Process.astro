@@ -24,7 +24,7 @@ const processSteps = [
   },
   {
     icon: "/assets/icons/services/5.jpg",
-    title: "6. COMPLETION & QA CHECK",
+    title: "5. COMPLETION & QA CHECK",
     text: "Once the job is completed, our team will revisit to ensure the quality is to CSA standards and re-evaluate our strengths, weakness, threats and opportunities.",
   },
 ];
@@ -47,8 +47,8 @@ import pump from "/assets/process/pump.jpeg";
           <div class="step">
             <div class="icon">
               <img src={step.icon} alt="" role="presentation" />
+              <h3>{step.title}</h3>
             </div>
-            <h3>{step.title}</h3>
             <p>{step.text}</p>
           </div>
         ))

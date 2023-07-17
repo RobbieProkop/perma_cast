@@ -20,7 +20,8 @@
 
   .grid {
     @include grid-4;
-    gap: 1rem;
+    gap: 2rem 1rem;
+    margin: 3rem 0;
 
     .certificate {
       @include flex-center;
@@ -29,7 +30,7 @@
       div {
         @include flex-center;
         min-height: 100px;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
         img {
           max-width: 200px;
