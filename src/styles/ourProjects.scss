@@ -17,12 +17,14 @@
     @include grid-3;
     .item {
       display: flex;
+      align-items: center;
       flex-direction: column;
       padding: 1rem;
       transition: opacity 200ms ease-in-out;
 
       h3 {
         @include flex-center;
+
         font-size: 1.5rem;
         min-height: 72px;
         color: $primary;
@@ -47,6 +49,7 @@
         text-align: left;
         border-radius: 0 0 5px 5px;
         min-height: 122px;
+        width: 100%;
         max-width: 400px;
       }
 
@@ -56,9 +59,14 @@
     }
   }
 
-  .btn {
-    margin-top: 3rem;
-    width: 30%;
+  .view-more {
+    grid-column: 2/3;
+    padding: 0 1rem;
+    .btn {
+      margin-top: 3rem;
+      width: 100%;
+      max-width: 400px;
+    }
   }
 }
 
