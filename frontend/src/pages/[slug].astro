@@ -23,7 +23,7 @@ const { Content, frontmatter } = Astro.props.project;
     <div class="container">
       <Card dark={true}>
         <a href="/projects">
-          <button class="btn">Go Back</button>
+          <button class="btn"><span>&#8592;</span> Go Back</button>
         </a>
         <h2>{frontmatter.title}</h2>
         <Content />

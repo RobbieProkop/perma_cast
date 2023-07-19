@@ -13,7 +13,12 @@ body {
   background-color: #fff;
   line-height: 1.5;
   color: #222;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
+
 h1,
 h2,
 h3,
@@ -99,6 +104,16 @@ li {
 
 .page-content {
   background-color: #edeaea;
+  min-height: 100%;
+  .container {
+    .card {
+      .btn {
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 550px) {

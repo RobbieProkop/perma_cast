@@ -9,7 +9,7 @@ import { leads } from "../../content/team/leads";
   <div class="container">
     <article>
       <div class="heading">
-        <h2>OUR TALENTED MANAGEMENT TEAM</h2>
+        <h2>OUR TALENTED TEAM</h2>
         <div class="line"></div>
       </div>
       <div class="grid">
@@ -19,23 +19,6 @@ import { leads } from "../../content/team/leads";
               <img src={member.image} alt="" role="presentation" />
               <h3>{member.name}</h3>
               <p>{member.position}</p>
-            </div>
-          ))
-        }
-      </div>
-    </article>
-    <article>
-      <div class="heading">
-        <h2>OUR LEAD HANDS</h2>
-        <div class="line"></div>
-      </div>
-      <div class="grid">
-        {
-          leads.map((lead) => (
-            <div class="person">
-              <img src={lead.image} alt="" role="presentation" />
-              <h3>{lead.name}</h3>
-              <p>{lead.position}</p>
             </div>
           ))
         }
