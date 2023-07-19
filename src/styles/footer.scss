@@ -1,6 +1,7 @@
 @import "variables";
 .footer {
   background-color: $secondary;
+  margin-top: auto;
   .container {
     @include flex-between;
     padding: 2rem 1rem 0 2rem;
