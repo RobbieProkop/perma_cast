@@ -1,9 +1,13 @@
 // const functions = require("firebase-functions");
+const express = require("express");
 const { google } = require("googleapis");
 const cors = require("cors")({ origin: true });
 const path = require("path");
 const fs = require("fs");
 require("dotenv").config();
+
+const PORT = process.env.PORT || 8080;
+const app = express();
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -23,11 +27,10 @@ const drive = google.drive({
   auth: oauth2Client,
 });
 
-// let file = req.body.file;
 const today = new Date();
 
-const filePath = path.join(__dirname, "chess.png");
-const uploadFile = async () => {
+const uploadFile = async (file) => {
+  const filePath = path.join(__dirname, file);
   try {
     const res = await drive.files.create({
       requestBody: {
@@ -45,7 +48,18 @@ const uploadFile = async () => {
     console.log("error", error);
   }
 };
-uploadFile();
+
+app.get("/", (req, res) => {
+  res.json({ message: "Hello from Server" });
+});
+
+app.post("/upload", (req, res) => {
+  let file = req.body.file;
+  uploadFile(file);
+  res.json({ message: "File has been uplaoded" });
+});
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // exports.uploadFile = functions.https.onRequest((req, res) => {
 //   cors(req, res, () => {
@@ -95,5 +109,3 @@ uploadFile();
 // app.get("/", (req, res) => {
 //   res.sendFile(path.join(__dirname, "index.html"));
 // });
-
-// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
