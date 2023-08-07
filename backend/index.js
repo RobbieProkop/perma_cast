@@ -1,4 +1,4 @@
-const functions = require("firebase-functions");
+// const functions = require("firebase-functions");
 const { google } = require("googleapis");
 const cors = require("cors")({ origin: true });
 
@@ -52,3 +52,20 @@ exports.uploadFile = functions.https.onRequest((req, res) => {
     };
   });
 });
+
+// const express = require("express");
+// const fileupload = require("express-fileupload");
+// const path = require("path");
+
+// const PORT = process.env.PORT || 8080;
+// const app = express();
+
+// // initial test route
+// // app.get("/", (req, res) => {
+// //   res.send("Hello World!");
+// // })
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "index.html"));
+// });
+
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
