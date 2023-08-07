@@ -1,6 +1,9 @@
 // const functions = require("firebase-functions");
 const { google } = require("googleapis");
 const cors = require("cors")({ origin: true });
+const path = require("path");
+const fs = require("fs");
+require("dotenv").config();
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -20,38 +23,63 @@ const drive = google.drive({
   auth: oauth2Client,
 });
 
-exports.uploadFile = functions.https.onRequest((req, res) => {
-  cors(req, res, () => {
-    if (req.method !== "POST") {
-      return res.status(500).json({
-        message: "Not allowed",
-      });
-    }
+// let file = req.body.file;
+const today = new Date();
 
-    let file = req.body.file;
-    const today = new Date();
+const filePath = path.join(__dirname, "chess.png");
+const uploadFile = async () => {
+  try {
+    const res = await drive.files.create({
+      requestBody: {
+        name: `resume-upload-${today}.png`,
+        mimeType: "image/png",
+      },
+      media: {
+        mimeType: "image/png",
+        body: fs.createReadStream(filePath),
+      },
+    });
 
-    const uploadFile = async (file) => {
-      const filePath = path.join(__dirname, file);
-      try {
-        const res = await drive.files.create({
-          requestBody: {
-            name: `resume-upload-${today}.jpeg`,
-            mimeType: "image/jpeg",
-          },
-          media: {
-            mimeType: "image/jpeg",
-            body: fs.createReadStream(filePath),
-          },
-        });
+    console.log("res.data :>> ", res.data);
+  } catch (error) {
+    console.log("error", error);
+  }
+};
+uploadFile();
 
-        console.log("res.data :>> ", res.data);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-  });
-});
+// exports.uploadFile = functions.https.onRequest((req, res) => {
+//   cors(req, res, () => {
+//     if (req.method !== "POST") {
+//       return res.status(500).json({
+//         message: "Not allowed",
+//       });
+//     }
+
+//     let file = req.body.file;
+//     const today = new Date();
+
+//     const uploadFile = async (file) => {
+//       const filePath = path.join(__dirname, file);
+//       try {
+//         const res = await drive.files.create({
+//           requestBody: {
+//             name: `resume-upload-${today}.png`,
+//             mimeType: "image/png",
+//           },
+//           media: {
+//             mimeType: "image/png",
+//             body: fs.createReadStream(filePath),
+//           },
+//         });
+
+//         console.log("res.data :>> ", res.data);
+//       } catch (error) {
+//         console.log("error", error);
+//       }
+//     };
+//     uploadFile();
+//   });
+// });
 
 // const express = require("express");
 // const fileupload = require("express-fileupload");
