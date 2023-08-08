@@ -71,7 +71,7 @@ const { fileUpload } = Astro.props as Props;
 </section>
 
 <script>
-  const form = document.getElementById("form") as HTMLInputElement;
+  const form = document.getElementById("form") as HTMLFormElement;
   const file = document.getElementById("file") as HTMLInputElement;
   const errSpan = document.getElementById("errorInfo") as HTMLElement;
   const name = document.getElementById("name") as HTMLInputElement;
@@ -79,6 +79,7 @@ const { fileUpload } = Astro.props as Props;
 
   window.addEventListener("load", () => {
     fetch("https://perma-cast-upload-server.onrender.com/");
+    console.log("loaded");
   });
 
   const validateSize = () => {
@@ -97,8 +98,8 @@ const { fileUpload } = Astro.props as Props;
   };
 
   form.addEventListener("submit", (e) => {
+    e.preventDefault();
     if (name.value.length === 0) {
-      e.preventDefault();
       name.parentElement?.classList.add("error");
       return;
     }
@@ -106,7 +107,6 @@ const { fileUpload } = Astro.props as Props;
       name.parentElement.classList.remove("error");
     }
     if (email.value.length === 0) {
-      e.preventDefault();
       email.parentElement?.classList.add("error");
       return;
     }
@@ -119,25 +119,28 @@ const { fileUpload } = Astro.props as Props;
       return false;
     }
     if (!validateSize()) {
-      e.preventDefault();
       console.log("file too big");
       return;
     }
     let formData = new FormData();
     formData.append("file", file.files[0]);
-    console.log("hellow", formData);
 
     fetch("https://perma-cast-upload-server.onrender.com/upload", {
       // fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
       method: "POST",
       body: formData,
     })
-      .then((res) => console.log("response", res))
+      .then((res) => {
+        if (res.ok) {
+          form.submit();
+        } else {
+          e.preventDefault();
+          console.log("failed to upload");
+        }
+      })
       .catch((err) => {
         console.log(err);
         e.preventDefault();
       });
-
-    e.preventDefault();
   });
 </script>
