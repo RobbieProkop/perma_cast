@@ -34,8 +34,6 @@ const drive = google.drive({
   auth: oauth2Client,
 });
 
-const today = new Date();
-
 const uploadFile = async (file) => {
   // const filePath = path.join(__dirname, file);
   const mime = file.mimetype;
@@ -72,6 +70,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
+// //////////////////////////////////////////
 // exports.uploadFile = functions.https.onRequest((req, res) => {
 //   cors(req, res, () => {
 //     if (req.method !== "POST") {
@@ -108,10 +107,6 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 // const express = require("express");
 // const fileupload = require("express-fileupload");
-// const path = require("path");
-
-// const PORT = process.env.PORT || 8080;
-// const app = express();
 
 // // initial test route
 // // app.get("/", (req, res) => {

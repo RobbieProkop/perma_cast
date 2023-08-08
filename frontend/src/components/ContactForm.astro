@@ -54,6 +54,7 @@ const { fileUpload } = Astro.props as Props;
               <input
                 type="file"
                 id="file"
+                name="file"
                 accept=".jpg, jpeg, .png, .pdf, "
                 class="btn-resume"
               />
@@ -75,6 +76,10 @@ const { fileUpload } = Astro.props as Props;
   const errSpan = document.getElementById("errorInfo") as HTMLElement;
   const name = document.getElementById("name") as HTMLInputElement;
   const email = document.getElementById("email") as HTMLInputElement;
+
+  window.addEventListener("load", () => {
+    fetch("https://perma-cast-upload-server.onrender.com/");
+  });
 
   const validateSize = () => {
     if (!file || !file.files) throw new Error("Error");
@@ -123,16 +128,16 @@ const { fileUpload } = Astro.props as Props;
     console.log("hellow", formData);
 
     fetch("https://perma-cast-upload-server.onrender.com/upload", {
+      // fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
       method: "POST",
       body: formData,
     })
-      .then((res) => console.log(res.json()))
+      .then((res) => console.log("response", res))
       .catch((err) => {
         console.log(err);
         e.preventDefault();
       });
 
     e.preventDefault();
-    // uploadFile(file.files[0]);
   });
 </script>
