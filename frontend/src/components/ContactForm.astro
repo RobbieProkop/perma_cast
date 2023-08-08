@@ -122,7 +122,7 @@ const { fileUpload } = Astro.props as Props;
     formData.append("file", file.files[0]);
     console.log("hellow", formData);
 
-    fetch("http://localhost:8080/upload", {
+    fetch("https://perma-cast-upload-server.onrender.com/upload", {
       method: "POST",
       body: formData,
     })
