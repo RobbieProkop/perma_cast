@@ -1,14 +1,21 @@
 // const functions = require("firebase-functions");
 const express = require("express");
 const { google } = require("googleapis");
-const cors = require("cors")({ origin: true });
+const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
 require("dotenv").config();
 
+const multer = require("multer");
+
 const PORT = process.env.PORT || 8080;
 const app = express();
+const upload = multer({ dest: "uploads/" });
 
+// urlencoded middleware
+app.use(express.urlencoded({ extended: false }));
+
+app.use(cors());
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
@@ -30,16 +37,18 @@ const drive = google.drive({
 const today = new Date();
 
 const uploadFile = async (file) => {
-  const filePath = path.join(__dirname, file);
+  // const filePath = path.join(__dirname, file);
+  const mime = file.mimetype;
+  const name = file.originalname;
   try {
     const res = await drive.files.create({
       requestBody: {
-        name: `resume-upload-${today}.png`,
-        mimeType: "image/png",
+        name: name,
+        mimeType: mime,
       },
       media: {
-        mimeType: "image/png",
-        body: fs.createReadStream(filePath),
+        mimeType: mime,
+        body: fs.createReadStream(file.path),
       },
     });
 
@@ -53,10 +62,12 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello from Server" });
 });
 
-app.post("/upload", (req, res) => {
-  let file = req.body.file;
-  uploadFile(file);
-  res.json({ message: "File has been uplaoded" });
+app.post("/upload", upload.single("file"), async (req, res) => {
+  let file = req.file;
+  console.log("file :>> ", file);
+  await uploadFile(file);
+  fs.unlinkSync(file.path);
+  res.json({ message: "File has been uploaded" });
 });
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
