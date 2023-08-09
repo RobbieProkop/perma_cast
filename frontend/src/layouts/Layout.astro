@@ -7,20 +7,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 export interface Props {
   title?: string;
   description?: string;
-  image?: string;
 }
 
-const {
-  description = SITE_DESCRIPTION,
-  title = SITE_TITLE,
-  image = "/assets/logo.png",
-} = Astro.props as Props;
+const { description = SITE_DESCRIPTION, title = SITE_TITLE } =
+  Astro.props as Props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} image={image} />
+    <BaseHead title={title} description={description} />
   </head>
   <body>
     <Header />
