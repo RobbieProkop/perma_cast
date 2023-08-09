@@ -4,17 +4,30 @@ const { google } = require("googleapis");
 const cors = require("cors");
 const fs = require("fs");
 require("dotenv").config();
+const os = require("os");
 
 const multer = require("multer");
 
+const tempDir = os.tmpdir();
+
 const app = express();
 const upload = multer({
-  dest: "/tmp/",
+  dest: tempDir,
   limits: {
     fileSize: 5 * 1024 * 1024, // 5MB
     fieldSize: 5 * 1024 * 1024, // 5MB
   },
 });
+// const upload = multer({
+//   startProcessing(req, busboy) {
+//     if (req.rawBody) {
+//       // indicates the request was pre-processed
+//       busboy.end(req.rawBody);
+//     } else {
+//       req.pipe(busboy);
+//     }
+//   },
+// });
 
 app.use(cors());
 const CLIENT_ID = process.env.CLIENT_ID;
@@ -64,14 +77,20 @@ app.post("/upload", upload.single("file"), async (req, res) => {
   let file = req.file;
   console.log("file :>> ", file);
   await uploadFile(file);
+  if (req.rawBody) {
+    // indicates the request was pre-processed
+    busboy.end(req.rawBody);
+  } else {
+    req.pipe(busboy);
+  }
   fs.unlinkSync(file.path);
-  // res.json({ message: "File has been uploaded" });
+  res.json({ message: "File has been uploaded" });
 });
 
-app.use((error, req, res, next) => {
-  const message = `This is unexpected => "${error}"`;
-  console.log("message :>> ", message);
-  return res.status(500).send(message);
-});
+// app.use((error, req, res, next) => {
+//   const message = `This is unexpected => "${error}"`;
+//   console.log("message :>> ", message);
+//   return res.status(500).send(message);
+// });
 
 exports.app = functions.https.onRequest(app);

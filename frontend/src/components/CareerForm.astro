@@ -117,8 +117,8 @@ import Card from "./Card.astro";
     let formData = new FormData();
     formData.append("file", file.files[0]);
 
-    fetch("https://perma-cast-upload-server.onrender.com/upload", {
-      // fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
+    // fetch("https://perma-cast-upload-server.onrender.com/upload", {
+    fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
       method: "POST",
       body: formData,
     })

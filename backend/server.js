@@ -2,7 +2,6 @@
 const express = require("express");
 const { google } = require("googleapis");
 const cors = require("cors");
-const path = require("path");
 const fs = require("fs");
 require("dotenv").config();
 
