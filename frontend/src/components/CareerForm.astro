@@ -70,9 +70,36 @@ import Card from "./Card.astro";
   const email = document.getElementById("email") as HTMLInputElement;
 
   window.addEventListener("load", () => {
-    fetch("https://perma-cast-upload-server.onrender.com/");
-    console.log("loaded");
+    fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   });
+
+  form.addEventListener("click", () => {
+    fetch("http://localhost:8080/heartbeat")
+      .then((res) => {
+        console.log("heartbeat");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  // setInterval(() => {
+  //   // fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+  //   fetch("http://localhost:8080/heartbeat")
+  //     .then((res) => {
+  //       console.log(res);
+  //       console.log("heartbeat");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, 500000);
 
   const validateSize = () => {
     if (!file || !file.files) throw new Error("Error");
@@ -117,8 +144,8 @@ import Card from "./Card.astro";
     let formData = new FormData();
     formData.append("file", file.files[0]);
 
-    // fetch("https://perma-cast-upload-server.onrender.com/upload", {
-    fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
+    fetch("https://perma-cast-upload-server.onrender.com/upload", {
+      // fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
       method: "POST",
       body: formData,
     })

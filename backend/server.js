@@ -57,6 +57,9 @@ const uploadFile = async (file) => {
 app.get("/", (req, res) => {
   res.json({ message: "Hello from Server" });
 });
+app.get("/heartbeat", (req, res) => {
+  res.json({ message: "Server is live" });
+});
 
 app.post("/upload", upload.single("file"), async (req, res) => {
   let file = req.file;
