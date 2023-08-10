@@ -9,7 +9,13 @@ const multer = require("multer");
 
 const PORT = process.env.PORT || 8080;
 const app = express();
-const upload = multer({ dest: "uploads/" });
+const upload = multer({
+  dest: "uploads/",
+  limits: {
+    fileSize: 2 * 1024 * 1024, // 2MB
+    fieldSize: 2 * 1024 * 1024, // 2MB
+  },
+});
 
 // urlencoded middleware
 app.use(express.urlencoded({ extended: false }));
