@@ -108,7 +108,8 @@ import Card from "./Card.astro";
       return false;
     }
     const size = file.files[0].size;
-    if (size && size > 2000000) {
+    // max size is 1mb
+    if (size && size > 1000000) {
       errSpan.textContent = "File size exceded limit of 2mb";
       return false;
     }
