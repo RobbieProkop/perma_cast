@@ -80,7 +80,7 @@ import Card from "./Card.astro";
   });
 
   form.addEventListener("click", () => {
-    fetch("http://localhost:8080/heartbeat")
+    fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
       .then((res) => {
         console.log("heartbeat");
       })
