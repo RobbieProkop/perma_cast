@@ -2,7 +2,7 @@
 import Card from "./Card.astro";
 ---
 
-<section class="contact" transition:persist>
+<section class="contact">
   <div class="container">
     <Card>
       <form
@@ -63,104 +63,106 @@ import Card from "./Card.astro";
 </section>
 
 <script>
-  const form = document.getElementById("form") as HTMLFormElement;
-  const file = document.getElementById("file") as HTMLInputElement;
-  const errSpan = document.getElementById("errorInfo") as HTMLElement;
-  const name = document.getElementById("name") as HTMLInputElement;
-  const email = document.getElementById("email") as HTMLInputElement;
+  document.addEventListener("astro:beforeload", () => {
+    const form = document.getElementById("form") as HTMLFormElement;
+    const file = document.getElementById("file") as HTMLInputElement;
+    const errSpan = document.getElementById("errorInfo") as HTMLElement;
+    const name = document.getElementById("name") as HTMLInputElement;
+    const email = document.getElementById("email") as HTMLInputElement;
 
-  window.addEventListener("load", () => {
-    fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
-      .then((res) => {
-        console.log("server has started");
+    window.addEventListener("load", () => {
+      fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+        .then((res) => {
+          console.log("server has started");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+
+    form.addEventListener("click", () => {
+      fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+        .then((res) => {
+          console.log("heartbeat");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+
+    // setInterval(() => {
+    //   // fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+    //   fetch("http://localhost:8080/heartbeat")
+    //     .then((res) => {
+    //       console.log(res);
+    //       console.log("heartbeat");
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // }, 500000);
+
+    const validateSize = () => {
+      if (!file || !file.files) throw new Error("Error");
+      if (!file.files[0]) {
+        errSpan.textContent = "No File Selected";
+        return false;
+      }
+      const size = file.files[0].size;
+      // max size is 1mb
+      if (size && size > 1000000) {
+        errSpan.textContent = "File size exceded limit of 2mb";
+        return false;
+      }
+
+      return true;
+    };
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (name.value.length === 0) {
+        name.parentElement?.classList.add("error");
+        return;
+      }
+      if (name.parentElement?.classList.contains("error")) {
+        name.parentElement.classList.remove("error");
+      }
+      if (email.value.length === 0) {
+        email.parentElement?.classList.add("error");
+        return;
+      }
+      if (email.parentElement?.classList.contains("error")) {
+        email.parentElement.classList.remove("error");
+      }
+      if (!file || !file.files) throw new Error("Error");
+      if (!file.files[0]) {
+        errSpan.textContent = "No File Selected";
+        return false;
+      }
+      if (!validateSize()) {
+        console.log("file too big");
+        return;
+      }
+      let formData = new FormData();
+      formData.append("file", file.files[0]);
+
+      fetch("https://perma-cast-upload-server.onrender.com/upload", {
+        // fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
+        method: "POST",
+        body: formData,
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
-  form.addEventListener("click", () => {
-    fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
-      .then((res) => {
-        console.log("heartbeat");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
-  // setInterval(() => {
-  //   // fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
-  //   fetch("http://localhost:8080/heartbeat")
-  //     .then((res) => {
-  //       console.log(res);
-  //       console.log("heartbeat");
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, 500000);
-
-  const validateSize = () => {
-    if (!file || !file.files) throw new Error("Error");
-    if (!file.files[0]) {
-      errSpan.textContent = "No File Selected";
-      return false;
-    }
-    const size = file.files[0].size;
-    // max size is 1mb
-    if (size && size > 1000000) {
-      errSpan.textContent = "File size exceded limit of 2mb";
-      return false;
-    }
-
-    return true;
-  };
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (name.value.length === 0) {
-      name.parentElement?.classList.add("error");
-      return;
-    }
-    if (name.parentElement?.classList.contains("error")) {
-      name.parentElement.classList.remove("error");
-    }
-    if (email.value.length === 0) {
-      email.parentElement?.classList.add("error");
-      return;
-    }
-    if (email.parentElement?.classList.contains("error")) {
-      email.parentElement.classList.remove("error");
-    }
-    if (!file || !file.files) throw new Error("Error");
-    if (!file.files[0]) {
-      errSpan.textContent = "No File Selected";
-      return false;
-    }
-    if (!validateSize()) {
-      console.log("file too big");
-      return;
-    }
-    let formData = new FormData();
-    formData.append("file", file.files[0]);
-
-    fetch("https://perma-cast-upload-server.onrender.com/upload", {
-      // fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
-      method: "POST",
-      body: formData,
-    })
-      .then((res) => {
-        if (res.ok) {
-          form.submit();
-        } else {
+        .then((res) => {
+          if (res.ok) {
+            form.submit();
+          } else {
+            e.preventDefault();
+            console.log("failed to upload");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
           e.preventDefault();
-          console.log("failed to upload");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-        e.preventDefault();
-      });
+        });
+    });
   });
 </script>
