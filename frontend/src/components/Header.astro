@@ -5,46 +5,46 @@ import HeaderLink from "./HeaderLink.astro";
 const logo = "/assets/logo.png";
 ---
 
-<header class="header">
-	<div class="logo">
-		<a href="/"
-			><img
-				src={logo}
-				alt="Perma Cast logo"
-				loading="eager"
-				fetchpriority="high"
-				decoding="async"
-			/></a
-		>
-	</div>
+<header class="header" transition:persist>
+  <div class="logo">
+    <a href="/"
+      ><img
+        src={logo}
+        alt="Perma Cast logo"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      /></a
+    >
+  </div>
 
-	<label for="open-menu" class="hidden"></label>
-	<input id="open-menu" class="toggler" type="checkbox" />
-	<div id="hamberger" class="hamberger"><div></div></div>
+  <label for="open-menu" class="hidden"></label>
+  <input id="open-menu" class="toggler" type="checkbox" />
+  <div id="hamberger" class="hamberger"><div></div></div>
 
-	<nav class="menu">
-		<HeaderLink class="menu-link" href="/">Home</HeaderLink>
-		<HeaderLink class="menu-link" href="/about">About Us</HeaderLink>
-		<HeaderLink class="menu-link" href="/services">Services</HeaderLink>
-		<HeaderLink class="menu-link" href="/projects">Projects</HeaderLink>
-		<HeaderLink class="menu-link" href="/safety">Safety</HeaderLink>
-		<HeaderLink class="menu-link" href="/careers">Careers</HeaderLink>
-		<HeaderLink class="menu-link" href="/contact">Contact</HeaderLink>
-	</nav>
+  <nav class="menu">
+    <HeaderLink class="menu-link" href="/">Home</HeaderLink>
+    <HeaderLink class="menu-link" href="/about">About Us</HeaderLink>
+    <HeaderLink class="menu-link" href="/services">Services</HeaderLink>
+    <HeaderLink class="menu-link" href="/projects">Projects</HeaderLink>
+    <HeaderLink class="menu-link" href="/safety">Safety</HeaderLink>
+    <HeaderLink class="menu-link" href="/careers">Careers</HeaderLink>
+    <HeaderLink class="menu-link" href="/contact">Contact</HeaderLink>
+  </nav>
 </header>
 
 <script>
-	const open = document.getElementById("open-menu") as HTMLInputElement;
-	const hamberger = document.getElementById("hamberger") as HTMLElement;
-	const links = document.querySelectorAll(".menu-link") as NodeListOf<Element>;
+  const open = document.getElementById("open-menu") as HTMLInputElement;
+  const hamberger = document.getElementById("hamberger") as HTMLElement;
+  const links = document.querySelectorAll(".menu-link") as NodeListOf<Element>;
 
-	hamberger.addEventListener("click", () => {
-		open.checked = !open.checked;
-	});
+  hamberger.addEventListener("click", () => {
+    open.checked = !open.checked;
+  });
 
-	links.forEach((link) => {
-		link.addEventListener("click", () => {
-			open.checked = false;
-		});
-	});
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      open.checked = false;
+    });
+  });
 </script>
