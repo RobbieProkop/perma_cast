@@ -42,9 +42,18 @@ const logo = "/assets/logo.png";
     open.checked = !open.checked;
   });
 
-  links.forEach((link) => {
-    link.addEventListener("click", () => {
-      open.checked = false;
+  document.addEventListener("astro:beforeload", () => {
+    open.checked = false;
+    links.forEach((link) => {
+      const href = link.getAttribute("href");
+      const pathname = window.location.pathname;
+      const isActive =
+        href === pathname || href === pathname.replace(/\/$/, "");
+      if (isActive) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
     });
   });
 </script>
