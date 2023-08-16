@@ -63,61 +63,61 @@ import Card from "./Card.astro";
 </section>
 
 <script>
-  document.addEventListener("astro:beforeload", () => {
-    const form = document.getElementById("form") as HTMLFormElement;
-    const file = document.getElementById("file") as HTMLInputElement;
-    const errSpan = document.getElementById("errorInfo") as HTMLElement;
-    const name = document.getElementById("name") as HTMLInputElement;
-    const email = document.getElementById("email") as HTMLInputElement;
+  const form = document.getElementById("form") as HTMLFormElement;
+  const file = document.getElementById("file") as HTMLInputElement;
+  const errSpan = document.getElementById("errorInfo") as HTMLElement;
+  const name = document.getElementById("name") as HTMLInputElement;
+  const email = document.getElementById("email") as HTMLInputElement;
 
-    window.addEventListener("load", () => {
-      fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
-        .then((res) => {
-          console.log("server has started");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
+  window.addEventListener("load", () => {
+    fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+      .then((res) => {
+        console.log("server has started");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
-    form.addEventListener("click", () => {
-      fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
-        .then((res) => {
-          console.log("heartbeat");
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
+  form.addEventListener("click", () => {
+    fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+      .then((res) => {
+        console.log("heartbeat");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 
-    // setInterval(() => {
-    //   // fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
-    //   fetch("http://localhost:8080/heartbeat")
-    //     .then((res) => {
-    //       console.log(res);
-    //       console.log("heartbeat");
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // }, 500000);
+  // setInterval(() => {
+  //   // fetch("https://perma-cast-upload-server.onrender.com/heartbeat")
+  //   fetch("http://localhost:8080/heartbeat")
+  //     .then((res) => {
+  //       console.log(res);
+  //       console.log("heartbeat");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, 500000);
 
-    const validateSize = () => {
-      if (!file || !file.files) throw new Error("Error");
-      if (!file.files[0]) {
-        errSpan.textContent = "No File Selected";
-        return false;
-      }
-      const size = file.files[0].size;
-      // max size is 1mb
-      if (size && size > 1000000) {
-        errSpan.textContent = "File size exceded limit of 2mb";
-        return false;
-      }
+  const validateSize = () => {
+    if (!file || !file.files) throw new Error("Error");
+    if (!file.files[0]) {
+      errSpan.textContent = "No File Selected";
+      return false;
+    }
+    const size = file.files[0].size;
+    // max size is 1mb
+    if (size && size > 1000000) {
+      errSpan.textContent = "File size exceded limit of 2mb";
+      return false;
+    }
 
-      return true;
-    };
+    return true;
+  };
 
+  const formSubmit = () => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (name.value.length === 0) {
@@ -147,12 +147,12 @@ import Card from "./Card.astro";
       formData.append("file", file.files[0]);
 
       fetch("https://perma-cast-upload-server.onrender.com/upload", {
-        // fetch("http://127.0.0.1:5001/steel-time-395219/us-central1/app/upload", {
         method: "POST",
         body: formData,
       })
         .then((res) => {
           if (res.ok) {
+            console.log("res", res);
             form.submit();
           } else {
             e.preventDefault();
@@ -164,5 +164,8 @@ import Card from "./Card.astro";
           e.preventDefault();
         });
     });
-  });
+  };
+
+  formSubmit();
+  document.addEventListener("astro:beforeload", formSubmit);
 </script>

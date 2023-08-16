@@ -4,6 +4,7 @@ const { google } = require("googleapis");
 const cors = require("cors");
 const fs = require("fs");
 require("dotenv").config();
+const { OAuth2Client } = require("google-auth-library");
 
 const multer = require("multer");
 
@@ -24,15 +25,37 @@ app.use(cors());
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
-const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+// const REFRESH_TOKEN = process.env.REFRESH_TOKEN;
+let REFRESH_TOKEN;
 
-const oauth2Client = new google.auth.OAuth2(
-  CLIENT_ID,
-  CLIENT_SECRET,
-  REDIRECT_URI
-);
+// const oauth2Client = new google.auth.OAuth2(
+//   CLIENT_ID,
+//   CLIENT_SECRET,
+//   REDIRECT_URI
+// );
 
-oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+const oauth2Client = new OAuth2Client(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+const SCOPES = ["https://www.googleapis.com/auth/drive"];
+
+app.get("/auth", (req, res) => {
+  const authorizeUrl = oauth2Client.generateAuthUrl({
+    access_type: "offline",
+    scope: SCOPES,
+  });
+  res.json({ message: "authorized" });
+  res.redirect(authorizeUrl);
+});
+
+app.get("/auth/callback", async (req, res) => {
+  const { code } = req.query;
+  const { tokens } = await oauth2Client.getToken(code);
+  REFRESH_TOKEN = tokens.refresh_token;
+  oauth2Client.setCredentials(tokens);
+
+  // Save tokens to your database or session for later use
+  res.send("Authenticated successfully");
+});
+// oauth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
 const drive = google.drive({
   version: "v3",
