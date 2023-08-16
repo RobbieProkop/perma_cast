@@ -146,14 +146,15 @@ import Card from "./Card.astro";
       let formData = new FormData();
       formData.append("file", file.files[0]);
 
-      fetch("https://perma-cast-upload-server.onrender.com/upload", {
+      // fetch("https://perma-cast-upload-server.onrender.com/upload", {
+      fetch("http://localhost:8080/upload", {
         method: "POST",
         body: formData,
       })
         .then((res) => {
           if (res.ok) {
             console.log("res", res);
-            form.submit();
+            // form.submit();
           } else {
             e.preventDefault();
             console.log("failed to upload");
