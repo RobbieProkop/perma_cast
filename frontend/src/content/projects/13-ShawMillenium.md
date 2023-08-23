@@ -1,7 +1,7 @@
 ---
 title: Shaw Millenium Park
 slug: shaw-millenium-park
-client: Ellisdon
+client: Ellis-Don
 location: Downtown, Calgary
 image: /assets/projects/webp/shawMillenium.webp
 featured: false

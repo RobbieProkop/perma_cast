@@ -9,75 +9,78 @@ const logo = "/assets/logo.png";
 ---
 
 <footer class="footer">
-	<div class="container">
-		<div class="left">
-			<a href="tel:+14032759626" class="phone"><h3>(403) 275-9626</h3></a>
-			<div class="address">
-				<div class="text-group">
-					<h3>OFFICE</h3>
-					<p>114 Panatella Circle NW,</p>
-					<p>Calgary, AB, T3K5Z7</p>
-				</div>
-				<div class="text-group">
-					<h3>SHOP</h3>
-					<p>8 Fulton Gate</p>
-					<p>Rocky View County, AB</p>
-				</div>
-			</div>
-			<div class="socials">
-				<a
-					href="https://www.instagram.com/perma_cast_concrete/"
-					target="_blank"
-					class="icon insta"
-					><img
-						src={insta}
-						alt="instagram logo"
-						loading="eager"
-						fetchpriority="high"
-						decoding="async"
-					/></a
-				>
-				<a
-					href="https://www.facebook.com/people/Perma-Cast/100070288428307/"
-					class="icon"
-					target="_blank"
-					><img
-						src={fb}
-						alt="facebook logo"
-						loading="eager"
-						fetchpriority="high"
-						decoding="async"
-					/></a
-				><a
-					href="https://www.linkedin.com/company/perma-cast-concrete-contracting-ltd/"
-					class="icon"
-					target="_blank"
-					><img
-						src={linkedin}
-						alt="linkedin logo"
-						loading="eager"
-						fetchpriority="high"
-						decoding="async"
-					/></a
-				>
-			</div>
-		</div>
-		<div class="right">
-			<div class="logo">
-				<a href="/"
-					><img
-						src={logo}
-						alt="Perma Cast logo"
-						loading="lazy"
-						fetchpriority="high"
-						decoding="async"
-					/></a
-				>
-			</div>
-		</div>
-	</div>
-	<p class="copyright">
-		&copy; {today.getFullYear()} Perma-Cast Concrete Construction LTD. All rights
-		reserved.
-	</p>
+  <div class="container">
+    <div class="left">
+      <a href="tel:+14032759626" class="phone"><h3>(403) 275-9626</h3></a>
+      <div class="address">
+        <div class="text-group">
+          <h3>OFFICE</h3>
+          <p>114 Panatella Circle NW,</p>
+          <p>Calgary, AB, T3K 5Z7</p>
+        </div>
+        <div class="text-group">
+          <h3>SHOP</h3>
+          <p>8 Fulton Gate</p>
+          <p>Rocky View County, AB</p>
+        </div>
+      </div>
+      <div class="socials">
+        <a
+          href="https://www.instagram.com/perma_cast_concrete/"
+          target="_blank"
+          class="icon insta"
+          ><img
+            src={insta}
+            alt="instagram logo"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          /></a
+        >
+        <a
+          href="https://www.facebook.com/people/Perma-Cast/100070288428307/"
+          class="icon"
+          target="_blank"
+          ><img
+            src={fb}
+            alt="facebook logo"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          /></a
+        ><a
+          href="https://www.linkedin.com/company/perma-cast-concrete-contracting-ltd/"
+          class="icon"
+          target="_blank"
+          ><img
+            src={linkedin}
+            alt="linkedin logo"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          /></a
+        >
+      </div>
+    </div>
+    <div class="right">
+      <div class="logo">
+        <a href="/"
+          ><img
+            src={logo}
+            alt="Perma-Cast logo"
+            loading="lazy"
+            fetchpriority="high"
+            decoding="async"
+          /></a
+        >
+      </div>
+    </div>
+  </div>
+  <p class="copyright">
+    &copy; {today.getFullYear()} Perma-Cast Concrete Construction LTD. All rights
+    reserved.
+    <a href="https://dhammadevs.com" target="_blank" class="dhammadevs">
+      Site by DhammaDevs
+    </a>
+  </p>
 </footer>
