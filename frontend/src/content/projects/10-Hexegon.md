@@ -1,9 +1,9 @@
 ---
-title: Hexegon
-slug: hexegon
+title: Hexagon
+slug: hexagon
 client: Remington Development Corp.
 location: Calgary
-image: /assets/projects/webp/hexegon.webp
+image: /assets/projects/webp/hexagon.webp
 featured: false
 completed: true
 ---

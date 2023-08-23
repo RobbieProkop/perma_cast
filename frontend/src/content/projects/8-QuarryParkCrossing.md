@@ -2,7 +2,7 @@
 title: Quarry Park Crossing Phase 1 & 2
 slug: quarry-park-crossing-phase-1-2
 client: Remington Developement Corp.
-location: Quary Park, Calgary
+location: Quarry Park, Calgary
 image: /assets/projects/webp/qpCrossing.webp
 featured: false
 completed: true
