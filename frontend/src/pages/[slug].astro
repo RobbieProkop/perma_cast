@@ -22,10 +22,18 @@ const { Content, frontmatter } = Astro.props.project;
   <section class="page-content">
     <div class="container">
       <Card dark={true}>
-        <a href="/projects">
+        <a href="/projects" class="go-back">
           <button class="btn"><span>&#8592;</span> Go Back</button>
         </a>
         <h2>{frontmatter.title}</h2>
+        <div class="project-image">
+          <img
+            src={frontmatter.image}
+            alt={`${frontmatter.title} image`}
+            loading="eager"
+          />
+        </div>
+
         <Content />
       </Card>
     </div>

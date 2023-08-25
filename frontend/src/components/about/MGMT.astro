@@ -2,7 +2,8 @@
 import "../../styles/mgmt.scss";
 
 import { management } from "../../content/team/management";
-import { leads } from "../../content/team/leads";
+
+// <img src={member.image} alt="" role="presentation" />
 ---
 
 <section class="team">
@@ -16,7 +17,6 @@ import { leads } from "../../content/team/leads";
         {
           management.map((member) => (
             <div class="person">
-              <img src={member.image} alt="" role="presentation" />
               <h3>{member.name}</h3>
               <p>{member.position}</p>
             </div>

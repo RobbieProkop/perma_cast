@@ -1,3 +1,5 @@
+@import "variables";
+
 .card {
   background: #fff;
   padding: 20px 2rem;
@@ -12,7 +14,42 @@
   }
 
   p {
-    margin: 2rem 0;
+    max-width: 800px;
+    margin: 2rem auto 0;
+  }
+  .go-back {
+    display: block;
+  }
+
+  .project-image {
+    @include flex-center();
+    max-width: 800px;
+    margin: 2rem auto 0;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid $primary;
+    max-width: 800px;
+    margin: 2rem auto;
+
+    .mobile {
+      display: none;
+    }
+
+    li {
+      border: 1px solid $primary;
+      padding: 0.5rem;
+      font-weight: 500;
+
+      a {
+        text-decoration: underline;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
   }
 }
 
@@ -24,6 +61,22 @@
     }
     p {
       margin: 1rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 1rem;
+    .grid {
+      grid-template-columns: 1fr;
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
+        display: none;
+      }
     }
   }
 }

@@ -1,9 +1,9 @@
 ---
 import "../styles/ourProjects.scss";
 
-import * as featured1 from "../content/projects/1-NewHorizon.md";
-import * as featured2 from "../content/projects/2-QuaryPark.md";
-import * as featured3 from "../content/projects/3-FrontStreetMedical.md";
+import * as featured1 from "../content/projects/1-Deville.md";
+import * as featured2 from "../content/projects/2-Blume.md";
+import * as featured3 from "../content/projects/3-Enmax.md";
 
 
 
@@ -34,7 +34,7 @@ if(isFeatured){
 
 ---
 
-<section class={isCurrent ? "featured pb0" : isCompleted?  "pt0 featured" : "featured" }>
+<section class="featured pb0">
   <div class="container">
     <div class="heading">
       <h2>{title}</h2>
@@ -46,10 +46,6 @@ if(isFeatured){
         const {title, slug, image, client, location, featured, completed} = project.frontmatter
 
         if(isFeatured && !featured) return;
-        //used for having current and completed sections
-        // if(isCompleted && !completed) return;
-        // if(isCurrent && completed) return;
-
         return (
           <a href={slug}>
             <div class="item">
