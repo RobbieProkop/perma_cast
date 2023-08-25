@@ -34,6 +34,10 @@
     max-width: 800px;
     margin: 2rem auto;
 
+    .mobile {
+      display: none;
+    }
+
     li {
       border: 1px solid $primary;
       padding: 0.5rem;
@@ -57,6 +61,22 @@
     }
     p {
       margin: 1rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card {
+    padding: 1rem;
+    .grid {
+      grid-template-columns: 1fr;
+      .mobile {
+        display: block;
+      }
+
+      .desktop {
+        display: none;
+      }
     }
   }
 }

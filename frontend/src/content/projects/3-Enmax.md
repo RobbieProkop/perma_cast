@@ -10,13 +10,13 @@ completed: false
 ---
 
 <div class="grid">
-    <li>Municipality:</li> <li>Calgary</li>
-    <li>Sector:</li> <li>Power</li>
-    <li>Type:</li> <li>Other</li>
-    <li>Schedule:</li> <li>2022 - 2025</li>
-    <li>Estimated Cost:</li> <li>$200.0M</li>
-    <li>Stage:</li> <li>Under Construction</li>
-    <li>Developer:</li> <li><a href="https://www.enmax.com/home">ENMAX Energy Corp.</a></li>
-    <li>Contractor:</li> <li><a href="https://grahambuilds.com/">Graham Construction</a></li>
-    <li>Related Links:</li> <li><a href="https://www.cbc.ca/news/canada/calgary/enmax-power-replacing-substation-one-1.6683096">Dec 12, 2022 - CBC</a></li>
+    <li>Municipality: <p class="mobile">Calgary</p></li> <li class="desktop">Calgary</li>
+    <li>Sector: <p class="mobile">Power</p></li> <li class="desktop">Power</li>
+    <li>Type: <p class="mobile">Other</p></li> <li class="desktop">Other</li>
+    <li>Schedule: <p class="mobile">2022 - 2025</p></li> <li class="desktop">2022 - 2025</li>
+    <li>Estimated Cost: <p class="mobile">$200.0M</p></li> <li class="desktop">$200.0M</li>
+    <li>Stage: <p class="mobile">Under Construction</p></li> <li class="desktop">Under Construction</li>
+    <li>Developer: <p class="mobile"><a href="https://www.enmax.com/">ENMAX Energy Corp.</a></p></li> <li class="desktop"><a href="https://www.enmax.com/">ENMAX Energy Corp.</a></li>
+    <li>Contractor: <p class="mobile">Graham Construction</p></li> <li class="desktop">Graham Construction</li>
+    <li>Related Links: <p class="mobile"><a href="https://www.cbc.ca/news/canada/calgary/enmax-power-replacing-substation-one-1.6683096">Dec 12, 2022 - CBC</a></p></li> <li class="desktop"><a href="https://www.cbc.ca/news/canada/calgary/enmax-power-replacing-substation-one-1.6683096">Dec 12, 2022 - CBC</a></li>
 </div>

@@ -9,10 +9,10 @@ completed: false
 ---
 
 <div class="grid">
-    <li>Owner:</li> <li>YWCA Calgary</li>
-    <li>Completion:</li> <li>August 2023</li>
-    <li>Developer:</li> <li><a href="https://cana.ca/">CANA Construction</a></li>
-    <li>Architect:</li> <li><a href="https://gga-arch.com/">GGA-Architecture</a></li>
-    <li>Delivery Type:</li> <li>Construction Management</li>
-    <li>Market:</li> <li>In-Progress</li>
+    <li>Owner: <p class="mobile">YWCA Calgary</p></li> <li class="desktop">YWCA Calgary</li>
+    <li>Sector: <p class="mobile">CANA Construction</p></li> <li class="desktop">CANA Construction</li>
+    <li>Completion: <p class="mobile">August 2023</p></li> <li class="desktop">August 2023</li>
+    <li>Architect: <p class="mobile">GGA-Architecture</p></li> <li class="desktop">GGA-Architecture</li>
+    <li>Delivery Type: <p class="mobile">Construction Management</p></li> <li class="desktop">Construction Management</li>
+    <li>Market: <p class="mobile">In-Progress</p></li> <li class="desktop">In-Progress</li>
 </div>

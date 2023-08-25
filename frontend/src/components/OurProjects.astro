@@ -46,10 +46,6 @@ if(isFeatured){
         const {title, slug, image, client, location, featured, completed} = project.frontmatter
 
         if(isFeatured && !featured) return;
-        //used for having current and completed sections
-        // if(isCompleted && !completed) return;
-        // if(isCurrent && completed) return;
-
         return (
           <a href={slug}>
             <div class="item">
