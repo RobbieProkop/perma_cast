@@ -12,18 +12,13 @@ completed: false
 
 Located in the community of Dalhousie in Calgary Alberta, BLUME Residential Mixed-Use Buildings will be made up of Two Towers, reaching 15 and 16 storeys high.
 
-Address: 4739 Dalton DR NW, Calgary,
-
-Category: Residential
-
-Status: Under Construction
-
-Number of Buildings: 2
-
-Height: 157 ft
-
-Storeys: 15
-
-Developer Remington Development Corporation
-
-Architect Gibbs Gage Architects
+<div class="grid">
+    <li>Address:</li> <li>4739 Dalton DR NW, Calgary</li>
+    <li>Category:</li> <li>Residential</li>
+    <li>Status:</li> <li>Under Construction</li>
+    <li>Number of Buildings:</li> <li>2</li>
+    <li>Height:</li> <li>157 ft</li>
+    <li>Storeys:</li> <li>15</li>
+    <li>Developer:</li> <li><a href="http://remingtoncorp.com/">Remington Development Corporation</a></li>
+    <li>Architect:</li> <li><a href="https://gga-arch.com/">GGA-Architecture</a></li>
+</div>

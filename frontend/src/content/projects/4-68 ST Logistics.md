@@ -20,5 +20,5 @@ Construction of a warehouses/distribution facility in the Point Trotter Industri
 <li>Stage:</li> <li>Under Construction</li>
 <li>Developer:</li> <li><a href="https://www.panattonicanada.com/">Panattoni Canada</a></li>
 <li>Contractor:</li> <li><a href="https://www.ledcor.com/">Ledcor Construction</a></li>
-<li>Architect:</li> <li>NEXT Architecture</li>
+<li>Architect:</li> <li><a href="https://www.nextarchitecture.ca/">NEXT Architecture</a></li>
 </div>

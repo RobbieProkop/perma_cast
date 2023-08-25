@@ -14,16 +14,37 @@
   }
 
   p {
-    margin: 2rem 0;
+    max-width: 800px;
+    margin: 2rem auto 0;
+  }
+  .go-back {
+    display: block;
+  }
+
+  .project-image {
+    @include flex-center();
+    max-width: 800px;
+    margin: 2rem auto 0;
   }
 
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     border: 1px solid $primary;
+    max-width: 800px;
+    margin: 2rem auto;
 
     li {
       border: 1px solid $primary;
+      padding: 0.5rem;
+      font-weight: 500;
+
+      a {
+        text-decoration: underline;
+        &:hover {
+          opacity: 0.6;
+        }
+      }
     }
   }
 }
