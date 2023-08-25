@@ -9,7 +9,7 @@ featured: false
 completed: false
 ---
 
-Construction of a warehouses/distribution facility in the Point Trotter Industrial Park, also known as the 68th Street Logistics Park in Calgary. Building one will measure 335,000 square feet. Building two will measure 422,000 square feet.
+<!-- Construction of a warehouses/distribution facility in the Point Trotter Industrial Park, also known as the 68th Street Logistics Park in Calgary. Building one will measure 335,000 square feet. Building two will measure 422,000 square feet. -->
 
 <div class="grid">
     <li>Municipality: <p class="mobile">Calgary</p></li> <li class="desktop">Calgary</li>

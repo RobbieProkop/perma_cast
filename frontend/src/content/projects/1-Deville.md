@@ -8,7 +8,7 @@ featured: true
 completed: false
 ---
 
-deVille, a new rental development in the heart of Quarry Park. deVille is attracting residents seeking a comfortable, amenity-rich and pet-friendly lifestyle. Three thirteen storey residential towers offer intelligent design and the convenience of The Market at Quarry Park is at your doorstep.
+<!-- deVille, a new rental development in the heart of Quarry Park. deVille is attracting residents seeking a comfortable, amenity-rich and pet-friendly lifestyle. Three thirteen storey residential towers offer intelligent design and the convenience of The Market at Quarry Park is at your doorstep. -->
 
 <div class="grid">
     <li>Address: <p class="mobile">83 QUARRY PARK RD SE, Calgary</p></li> <li class="desktop">83 QUARRY PARK RD SE, Calgary</li>

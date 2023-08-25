@@ -10,7 +10,7 @@ featured: true
 completed: false
 ---
 
-Located in the community of Dalhousie in Calgary Alberta, BLUME Residential Mixed-Use Buildings will be made up of Two Towers, reaching 15 and 16 storeys high.
+<!-- Located in the community of Dalhousie in Calgary Alberta, BLUME Residential Mixed-Use Buildings will be made up of Two Towers, reaching 15 and 16 storeys high. -->
 
 <div class="grid">
     <li>Address: <p class="mobile">4739 Dalton DR NW, Calgary</p></li> <li class="desktop">4739 Dalton DR NW, Calgary</li>
