@@ -65,7 +65,7 @@ export const management = [
     // image: "/assets/team/management/shelly.jpeg",
   },
   {
-    name: "JOSH KALMBACK",
+    name: "JOSH KALMBACH",
     position: "SITE FOREMAN, NCSO SAFETY ADVISOR",
     // image: "/assets/team/management/shelly.jpeg",
   },
