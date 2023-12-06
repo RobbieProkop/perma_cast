@@ -25,6 +25,15 @@
         }
       }
 
+      .text-group {
+        margin: 0.5rem 0;
+        h3,
+        p {
+          font-size: 1rem;
+          text-align: left;
+        }
+      }
+
       .address {
         @include flex-center;
         gap: 25px;
