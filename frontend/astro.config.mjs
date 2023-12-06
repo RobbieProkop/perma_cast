@@ -8,6 +8,6 @@ export default defineConfig({
   experimental: {
     viewTransitions: true,
   },
-  site: "https://example.com",
+  site: "https://permacast.ca",
   integrations: [mdx(), sitemap()],
 });
