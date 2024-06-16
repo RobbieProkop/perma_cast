@@ -2,8 +2,6 @@
 import Card from "./Card.astro";
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/@hcaptcha/vanilla-hcaptcha"></script>
-
 <section class="contact">
   <div class="container">
     <Card>
@@ -13,6 +11,7 @@ import Card from "./Card.astro";
         id="form"
         method="POST"
         enctype="multipart/form-data"
+        netlify-honeypot="bot-field"
         data-netlify="true"
       >
         <div class="form-group">
@@ -45,12 +44,6 @@ import Card from "./Card.astro";
             placeholder="Write a message"></textarea>
         </div>
 
-        <h-captcha
-          id="signupCaptcha"
-          site-key="781559eb-513a-4bae-8d29-d4af340e3624"
-          size="normal"
-          tabindex="0"></h-captcha>
-
         <button class="btn btn-primary btn-block" id="formBtn" type="submit"
           >Submit</button
         >
@@ -58,14 +51,3 @@ import Card from "./Card.astro";
     </Card>
   </div>
 </section>
-
-<script>
-  const signupCaptcha = document.getElementById("signupCaptcha");
-
-  signupCaptcha.addEventListener("verified", (e) => {
-    console.log("verified event", { token: e.token });
-  });
-  signupCaptcha.addEventListener("error", (e) => {
-    console.log("error event", { error: e.error });
-  });
-</script>
