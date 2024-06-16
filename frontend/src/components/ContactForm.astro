@@ -15,6 +15,13 @@ import Card from "./Card.astro";
         data-netlify="true"
       >
         <div class="form-group">
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
+        </div>
+        <div class="form-group">
           <label for="name">Name (required)</label>
           <input type="text" id="name" name="name" placeholder="Enter Name" />
         </div>
